@@ -13,6 +13,8 @@ Bundler.require(:default, Rails.env)
 
 module BonusBatch
   class Application < Rails::Application
+
+    config.secre_key = "ebcfeb4879ac68515e8f174f8c2427b8af348fa5edbd6092147983593882fdcf8482690412e9324aa8b5f19760b628dfe984f2158d70928af83452ba070c1509"
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
