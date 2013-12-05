@@ -14,5 +14,6 @@ BonusBatch::Application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: 'crowdint_auth/omniauth_callbacks' }
 
+  resources :dashboard, only: :index
 
 end

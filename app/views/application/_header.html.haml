@@ -1,0 +1,6 @@
+- if current_user
+  %menu{ label: 'user_menu' }
+    %li
+      = current_user.name
+    %li
+      = link_to 'Sign out', destroy_user_session_path, method: 'delete'
