@@ -12,6 +12,7 @@ gem 'rails', '4.0.1'
 gem 'rails-backbone'
 gem 'sqlite3'
 gem 'uglifier', '>= 1.3.0'
+gem 'crowdint_auth'
 
 group :development, :test do
   gem 'capybara-webkit'
