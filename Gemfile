@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
-
 gem 'active_model_serializers'
 gem 'devise'
 gem 'haml-rails'
