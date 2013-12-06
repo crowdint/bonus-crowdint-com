@@ -5,7 +5,9 @@ class BonusBatch.Views.Base extends Backbone.View
   model: new Backbone.Model
 
   render: ->
+    @beforeRender()  if typeof (@beforeRender) is 'function'
     @$el.html @template @model.toJSON()
+    @afterRender()  if typeof (@afterRender) is 'function'
     @
 
   params: ->

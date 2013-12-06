@@ -1,1 +1,11 @@
-Yiey
+%nav
+  %a{ href: 'batches' } Batches
+  %a{ href: 'members' } Members
+  %a{ href: 'settings' } Settings
+
+%article#batches{ style: 'display:none' }
+  Batches
+%article#members{ style: 'display:none' }
+  Members
+%article#settings{ style: 'display:none' }
+

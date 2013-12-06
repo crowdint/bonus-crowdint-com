@@ -1,0 +1,14 @@
+%form
+  %fieldset
+    %label{ for: 'allocation' } Total Allocation:
+    %input{ name: 'allocation', value: 200 }
+
+    %label Bonus Range:
+    %input{ type: 'number', name: 'range_min', min: 1, max: 200, value: 1 }
+    to
+    %input{ type: 'number', name: 'range_max', min: 1, max: 200, value: 200 }
+
+    %label Minimum Bonus Assignment:
+    %input{ type: 'number', name: 'minimum-asigments', min: 1, max: 5, value: 1 }
+
+  %input{ type: 'submit', value: 'Save' }

@@ -1,5 +1,5 @@
 %td
-  %a{ href: "organizations/#{@id}" }= @name
+  %a{ href: "my-organizations/#{@id}" }= @name
 %td= @user_role
 %td
   %button
