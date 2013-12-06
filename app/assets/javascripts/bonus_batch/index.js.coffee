@@ -16,3 +16,6 @@ window.BonusBatch =
   dashboard: ->
     @Router = new BonusBatch.Routers.AppRouter()
     Backbone.history.start pushState: true
+
+$.fn.serializeObject = ->
+  @.formParams()
