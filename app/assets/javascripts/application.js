@@ -15,4 +15,4 @@
 //= require underscore
 //= require backbone
 //= require hamlcoffee
-//= require bonus_batch/bonus_batch
+//= require bonus_batch
