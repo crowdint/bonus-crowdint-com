@@ -3,7 +3,7 @@ class OrganizationsController < ApplicationController
 
   # GET /organizations.json
   def index
-    @organizations = Organization.all
+    @organizations = current_user.organizations
     render json: @organizations, status: :ok
   end
 

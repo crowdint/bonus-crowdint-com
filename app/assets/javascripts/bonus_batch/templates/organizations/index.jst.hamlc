@@ -1,0 +1,17 @@
+%table
+  %thead
+    %tr
+      %th Name
+      %th Role
+      %th Actions
+  %tfoot
+    %tr
+      %td
+        %nav
+          %a{href: "#"} Prev
+          %a{href: "#"} 2
+          %a{href: "#"} 1
+          %a{href: "#"} Next
+  %tbody
+
+%button Create

@@ -1,0 +1,5 @@
+%td= @name
+%td= @user_role
+%td
+  %button
+    Borrar
