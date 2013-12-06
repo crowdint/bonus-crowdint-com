@@ -7,3 +7,17 @@ class BonusBatch.Views.Base extends Backbone.View
   render: ->
     @$el.html @template @model.toJSON()
     @
+
+  params: ->
+    @$('form').serializeObject()
+
+  handleFormSubmit: (event) =>
+    event.preventDefault()
+    @model.clear silent: true
+    @model.set @params(),
+      silent: true
+    if @model.isValid true
+      @model.save({}
+        success: (model, response) =>
+          @handleSuccess(response)
+      )

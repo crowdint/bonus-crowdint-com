@@ -1,0 +1,26 @@
+%h1
+  New Organization
+
+%form{  action: '/organizations', method: 'post'  }
+  %label
+    Name
+  %input{ name: 'name' }
+
+  %h1
+    Settings
+
+  %label
+    Total Allocation Points
+  %input
+
+  %label
+    Bonus Range
+  %input
+
+  %label
+    Minimum Bonus Assignment
+  %input
+
+  %input{ type: 'submit'}
+
+  %a.cancel{ href: '#' }

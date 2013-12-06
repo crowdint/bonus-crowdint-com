@@ -15,5 +15,4 @@ class BonusBatch.Views.DashboardView extends BonusBatch.Views.Base
     organizationsView = new BonusBatch.Views.Organizations.IndexView
       el: @$('#organizations')
       collection: organizationsCollection
-
     organizationsCollection.fetch reset: true
