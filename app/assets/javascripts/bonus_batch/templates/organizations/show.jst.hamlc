@@ -1,7 +1,7 @@
 %nav
-  %a{ href: 'batches' } Batches
-  %a{ href: 'members' } Members
-  %a{ href: 'settings' } Settings
+  %a{ href: "/my-organizations/#{@id}/batches" } Batches
+  %a{ href: "/my-organizations/#{@id}/members" } Members
+  %a{ href: "/my-organizations/#{@id}/settings" } Settings
 
 %article#batches{ style: 'display:none' }
   Batches
