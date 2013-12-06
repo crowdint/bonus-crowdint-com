@@ -14,9 +14,5 @@
 //= require jquery_ujs
 //= require underscore
 //= require backbone
-<<<<<<< HEAD
 //= require hamlcoffee
-//= require bonus_batch/bonus_batch
-=======
 //= require bonus_batch
->>>>>>> rename bonus_batch to index in order to follow convention
