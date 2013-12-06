@@ -21,7 +21,7 @@ end
 
 group :assets do
   gem 'coffee-rails', '~> 4.0.0'
-  gem 'eco'
-  gem 'haml_assets'
+  gem 'haml_coffee_assets'
+  gem 'execjs'
   gem 'sass-rails', '~> 4.0.0'
 end

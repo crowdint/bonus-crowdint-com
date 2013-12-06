@@ -1,0 +1,31 @@
+%section#organizations
+  %table
+    %thead
+      %tr
+        %th Name
+        %th Role
+        %th Actions
+    %tfoot
+      %tr
+        %td
+          %nav
+            %a{href: "#"} Prev
+            %a{href: "#"} 2
+            %a{href: "#"} 1
+            %a{href: "#"} Next
+    %tbody
+      %tr
+        %td Org
+        %td Owner
+        %td
+          %button Borrar
+      %tr
+        %td Org 2
+        %td Admin
+        %td
+          %button Borrar
+      %tr
+        %td Org 3
+        %td Member
+        %td
+          %button Borrar
