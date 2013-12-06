@@ -1,4 +1,5 @@
-%td= @name
+%td
+  %a{ href: "organizations/#{@id}" }= @name
 %td= @user_role
 %td
   %button

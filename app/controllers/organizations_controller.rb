@@ -40,7 +40,7 @@ class OrganizationsController < ApplicationController
 
   private
   def set_organization
-    @organization = Organization.find(params[:id])
+    @organization = current_user.organizations.find(params[:id])
   end
 
   def organization_params
