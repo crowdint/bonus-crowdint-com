@@ -12,21 +12,21 @@
         %label{ for: 'name' } Name:
         %input{ type: 'text', name: 'name', value: '' }
 
-      .form-group
-        %legend Members:
+    %legend
+      Members:
 
-        %table.table
-          %thead
-            %tr
-              %th Name
-              %th Points
-          %tbody
-            - for user in @users
-              %tr
-                %td= user.name
-                %td
-                  %input{ type: 'hidden' name: 'user_batches[#{user.id}][id]', value: user.id }
-                  %input{ type: 'text' name: 'user_batches[#{user.id}][balance]', value: user.balance }
+    %table.table
+      %thead
+        %tr
+          %th Name
+          %th Points
+      %tbody
+        - for user_batch in @user_batches
+          %tr
+            %td= user_batch.user_name
+            %td
+              %input{ type: 'hidden', name: 'user_batches_attributes[#{user_batch.id}][id]', value: user_batch.id }
+              %input{ type: 'text', name: 'user_batches_attributes[#{user_batch.id}][balance]', value: user_batch.balance }
 
-      %input{ type: 'submit', value: 'Save' }
-      %a{ href: '#' } Cancel
+    %a{ href: '#' } Cancel
+    %input{ type: 'submit', value: 'Save' }
