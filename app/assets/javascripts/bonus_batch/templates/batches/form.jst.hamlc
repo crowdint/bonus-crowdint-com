@@ -15,7 +15,7 @@
       %legend
         Members:
 
-      %table#batch-members.table
+      %table.batch-members.table
 
     %a{ href: '#' } Cancel
     %input{ type: 'submit', value: 'Save' }

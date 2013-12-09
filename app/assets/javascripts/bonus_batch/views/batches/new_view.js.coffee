@@ -15,5 +15,5 @@ class BonusBatch.Views.Batches.NewView extends BonusBatch.Views.New
     userBatchesCollection = new BonusBatch.Collections.UserBatchesCollection()
     userBatchesIndexView = new BonusBatch.Views.Batches.Users.IndexView
       collection: userBatchesCollection
-      el: @$('#batch-members')
+      el: @$('.batch-members')
     userBatchesCollection.reset @model.get('user_batches')

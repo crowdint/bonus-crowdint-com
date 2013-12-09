@@ -1,6 +1,7 @@
 class BatchSerializer < ActiveModel::Serializer
   attributes :id, :name, :allocation, :user_balance, :status
   has_many :user_batches
+  has_one :organization
 
   def user_balance
     user = object.user_batches.where(user: scope).first
