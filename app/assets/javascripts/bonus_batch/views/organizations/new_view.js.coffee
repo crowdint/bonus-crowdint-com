@@ -4,3 +4,6 @@ class BonusBatch.Views.Organizations.NewView extends BonusBatch.Views.New
   tagName: 'section'
 
   id: 'new-organization'
+
+  handleSuccess: (response) =>
+    BonusBatch.Router.navigate '/my-organizations', trigger: true
