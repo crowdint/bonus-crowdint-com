@@ -25,7 +25,7 @@ class BatchesController < ApplicationController
   # PATCH/PUT /batches/1.json
   def update
     if @batch.update(batch_params)
-      head :no_content
+      render json: @batch, status: :ok
     else
       render json: @batch.errors, status: :unprocessable_entity
     end
@@ -43,7 +43,8 @@ class BatchesController < ApplicationController
   end
 
   def batch_params
-    params.require(:batch).permit(:name, :allocation, :organization_id)
+    params.permit(:name, :allocation, :organization_id,
+                  user_batches_attributes: [:balance, :id])
   end
 
   def set_organization

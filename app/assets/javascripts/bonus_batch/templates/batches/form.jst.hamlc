@@ -16,12 +16,12 @@
           %th Name
           %th Points
       %tbody
-        - for user in @users
+        - for user_batch in @user_batches
           %tr
-            %td= user.name
+            %td= user_batch.user_name
             %td
-              %input{ type: 'hidden' name: 'user_batches[#{user.id}][id]', value: user.id }
-              %input{ type: 'text' name: 'user_batches[#{user.id}][balance]', value: user.balance }
+              %input{ type: 'hidden', name: 'user_batches_attributes[#{user_batch.id}][id]', value: user_batch.id }
+              %input{ type: 'text', name: 'user_batches_attributes[#{user_batch.id}][balance]', value: user_batch.balance }
 
   %input{ type: 'submit', value: 'Save' }
   %a{ href: '#' } Cancel

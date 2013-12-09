@@ -7,6 +7,8 @@ class Batch < ActiveRecord::Base
   has_many :bonuses
   belongs_to :organization
 
+  accepts_nested_attributes_for :user_batches
+
   private
   def default_allocation
     self.allocation ||= self.organization.total_allocation
