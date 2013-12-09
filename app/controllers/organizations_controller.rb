@@ -1,9 +1,10 @@
 class OrganizationsController < ApplicationController
+  before_action :set_user
   before_action :set_organization, only: [:show, :update, :destroy]
 
   # GET /organizations.json
   def index
-    @organizations = current_user.organizations
+    @organizations = @user.organizations
     render json: @organizations, status: :ok
   end
 
@@ -14,9 +15,7 @@ class OrganizationsController < ApplicationController
 
   # POST /organizations.json
   def create
-    @organization = Organization.new(organization_params)
-
-    if @organization.save
+    if @organization = @user.organizations.create(organization_params)
       render json: @organization, status: :created, location: @organization
     else
       render json: @organization.errors, status: :unprocessable_entity
@@ -40,10 +39,15 @@ class OrganizationsController < ApplicationController
 
   private
   def set_organization
-    @organization = current_user.organizations.find(params[:id])
+    @organization = @user.organizations.find(params[:id])
   end
 
   def organization_params
-    params.require(:organization).permit(:name)
+    params.require(:organization).permit(:name, :id, :total_allocation,
+                                         :min_bonus, :max_bonus, :min_assignments)
+  end
+
+  def set_user
+    @user = params[:user_id] && User.find(params[:user_id]) || current_user
   end
 end

@@ -18,7 +18,7 @@ class BonusBatch.Views.Organizations.ShowView extends BonusBatch.Views.Base
   renderMembers: ->
 
   renderSettings: ->
-    settingsView = new BonusBatch.Views.Organizations.SettingsView
+    editView = new BonusBatch.Views.Organizations.EditView
       el: @$('#settings')
       model: @model
-    settingsView.render()
+    editView.render()

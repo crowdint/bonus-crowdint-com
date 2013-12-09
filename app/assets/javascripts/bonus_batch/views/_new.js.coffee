@@ -12,6 +12,6 @@ class BonusBatch.Views.New extends BonusBatch.Views.Base
     @remove()
 
   handleSuccess: (response) =>
-    @collection.add @model
+    #@collection.add @model
 
 

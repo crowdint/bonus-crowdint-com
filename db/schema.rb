@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131205061620) do
+ActiveRecord::Schema.define(version: 20131206224542) do
 
   create_table "batches", force: true do |t|
     t.string   "name"
@@ -35,6 +35,10 @@ ActiveRecord::Schema.define(version: 20131205061620) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "total_allocation"
+    t.integer  "min_bonus"
+    t.integer  "max_bonus"
+    t.integer  "min_assignments"
   end
 
   create_table "user_batches", force: true do |t|
