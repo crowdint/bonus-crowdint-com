@@ -1,6 +1,5 @@
 class Batch < ActiveRecord::Base
   after_initialize :default_allocation
-  before_save :set_users
 
   has_many :users, through: :user_batches
   has_many :user_batches
@@ -14,7 +13,4 @@ class Batch < ActiveRecord::Base
     self.allocation ||= self.organization.total_allocation
   end
 
-  def set_users
-    self.users = self.organization.users
-  end
 end
