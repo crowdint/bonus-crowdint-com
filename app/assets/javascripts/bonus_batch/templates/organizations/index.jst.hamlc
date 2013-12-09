@@ -11,11 +11,15 @@
     %tfoot
       %tr
         %td
-          %nav
-            %a{href: "#"} Prev
-            %a{href: "#"} 2
-            %a{href: "#"} 1
-            %a{href: "#"} Next
+          %ul.pagination
+            %li
+              %a{href: "#"} &laquo
+            %li
+              %a{href: "#"} 1
+            %li
+              %a{href: "#"} 2
+            %li
+              %a{href: "#"} &raquo
     %tbody
 
   .panel-footer

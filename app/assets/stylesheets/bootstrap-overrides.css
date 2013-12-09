@@ -2,7 +2,7 @@
   margin-right: 30px !important;
 }
 
-#batches .panel {
+#batches .panel, #settings .panel {
   border-top: none !important;
   border-radius: 0px 0px 4px 4px !important;
 }
