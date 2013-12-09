@@ -1,15 +1,6 @@
-class BonusBatch.Views.Batches.IndexView extends BonusBatch.Views.Base
+class BonusBatch.Views.Batches.IndexView extends BonusBatch.Views.IndexView
   initialize: ->
-    @render()
-    @collection.on 'reset', @addAll, @
+    @resourceView = BonusBatch.Views.Batches.BatchView
+    super
 
   templatePath: 'batches/index'
-
-  addAll: (batches) ->
-    batches.each @addOne, @
-
-  addOne: (batches) ->
-    batchesView = new BonusBatch.Views.Batches.BatchView
-      model: batches
-
-    @$('tbody').prepend batchesView.render().el
