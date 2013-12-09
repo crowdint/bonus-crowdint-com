@@ -2,3 +2,11 @@ class BonusBatch.Views.Organizations.OrganizationView extends BonusBatch.Views.B
   templatePath: 'organizations/organization'
 
   tagName: 'tr'
+
+  events:
+    'click button' : 'removeOrganization'
+
+  removeOrganization: ->
+    @model.destroy()
+    @remove()
+    return false
