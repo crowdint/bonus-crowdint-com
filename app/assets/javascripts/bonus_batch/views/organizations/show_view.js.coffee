@@ -5,16 +5,26 @@ class BonusBatch.Views.Organizations.ShowView extends BonusBatch.Views.Base
 
   templatePath: 'organizations/show'
 
+  events:
+    'click .nav li' : 'selectTab'
+
   beforeRender: ->
     @el.id = @model.get 'id'
 
   afterRender: ->
-    @$("[data-target='##{@options.tab}']").tab('show')
-    @$("##{@options.tab}").toggleClass('active')
+    @displayTab @options.tab
     @renderBatches()
     @renderMembers()
 
   tagName: 'section'
+
+  selectTab: (event) ->
+    tab = $(event.target).attr('href')
+    BonusBatch.Router.navigate tab, trigger: false
+
+  displayTab: (tab) ->
+    @$("[data-target='##{tab}']").tab('show')
+    @$("##{tab}").toggleClass('active')
 
   renderBatches: ->
     batches = new BonusBatch.Collections.BatchesCollection()
