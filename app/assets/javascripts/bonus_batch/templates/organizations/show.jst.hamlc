@@ -1,14 +1,15 @@
 %ul.nav.nav-tabs
-  %li.active
-    %a{ href: "/my-organizations/#{@id}/batches" } Batches
-  %li
-    %a{ href: "/my-organizations/#{@id}/members" } Members
-  %li
-    %a{ href: "/my-organizations/#{@id}/settings" } Settings
+  %li.batches.active
+    %a{ "data-toggle" => "tab", "data-target" => '#batches',  href:  "/my-organizations/#{@id}/batches" } Batches
+  %li.members
+    %a{ "data-toggle" => "tab", "data-target" => '#members',  href:  "/my-organizations/#{@id}/members" } Members
+  %li.settings
+    %a{ "data-toggle" => "tab", "data-target" => '#settings', href:  "/my-organizations/#{@id}/settings" } Settings
 
-%article#batches{ style: 'display:none' }
-  Batches
-%article#members{ style: 'display:none' }
-  Members
-%article#settings{ style: 'display:none' }
+.tab-content
+  %article#batches.tab-pane
+    Batches
+  %article#members.tab-pane
+    Members
+  %article#settings.tab-pane
 

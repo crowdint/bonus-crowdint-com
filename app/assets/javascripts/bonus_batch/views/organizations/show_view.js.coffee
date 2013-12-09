@@ -9,7 +9,8 @@ class BonusBatch.Views.Organizations.ShowView extends BonusBatch.Views.Base
     @el.id = @model.get 'id'
 
   afterRender: ->
-    @$("##{@options.tab}").show()
+    @$("[data-target='##{@options.tab}']").tab('show')
+    @$("##{@options.tab}").toggleClass('active')
 
   tagName: 'section'
 
