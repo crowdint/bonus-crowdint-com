@@ -1,0 +1,10 @@
+%td
+  %a{ href: "batches/#{@id}" }= @name
+%td= @balance
+%td= @status
+%td
+  %button
+    Report
+%td
+  %button
+    Lock

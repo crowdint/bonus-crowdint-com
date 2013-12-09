@@ -10,10 +10,16 @@ class BonusBatch.Views.Organizations.ShowView extends BonusBatch.Views.Base
 
   afterRender: ->
     @$("##{@options.tab}").show()
+    @renderBatches()
 
   tagName: 'section'
 
   renderBatches: ->
+    batches = new BonusBatch.Collections.BatchesCollection()
+    batchesIndexView = new BonusBatch.Views.Batches.IndexView
+      el: @$('#batches')
+      collection: batches
+    batches.fetch reset: true, data: { organization_id: @model.id }
 
   renderMembers: ->
 

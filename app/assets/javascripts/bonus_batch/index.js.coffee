@@ -12,6 +12,7 @@ window.BonusBatch =
   Router: null
   Views:
     Organizations: {}
+    Batches: {}
 
   dashboard: ->
     @Router = new BonusBatch.Routers.AppRouter()
