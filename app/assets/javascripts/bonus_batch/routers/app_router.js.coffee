@@ -1,9 +1,11 @@
 class BonusBatch.Routers.AppRouter extends Backbone.Router
   routes:
-    'my-organizations/new'          : 'newOrganization'
-    'my-organizations/:id(/:tab)'   : 'organizationsShow'
-    'my-organizations'              : 'dashboard'
-    'dashboard'                     : 'dashboard'
+    'my-organizations/new'                            : 'newOrganization'
+    'my-organizations/:organization_id/batches/new'   : 'newBatch'
+    'my-organizations/:organization_id/batches/:id'   : 'batchesShow'
+    'my-organizations/:id(/:tab)'                     : 'organizationsShow'
+    'my-organizations'                                : 'dashboard'
+    'dashboard'                                       : 'dashboard'
 
   dashboard: ->
     dashBoardView = new BonusBatch.Views.DashboardView()
@@ -21,3 +23,16 @@ class BonusBatch.Routers.AppRouter extends Backbone.Router
       model: organization
       tab: tab
     $('#main-container').html organziationShowView.render().el
+
+  newBatch: (organization_id) ->
+    batch = new BonusBatch.Models.BatchModel organization_id: organization_id
+    newBatchView = new BonusBatch.Views.Batches.NewView
+      model: batch
+      el: $('#main-container')
+
+  batchesShow: (organization_id, batch_id) ->
+    batch = new BonusBatch.Models.BatchModel id: batch_id
+    batchShowView = new BonusBatch.Views.Batches.ShowView
+      model: batch
+      el: $('#main-container')
+    batch.fetch data: { organization_id: organization_id }

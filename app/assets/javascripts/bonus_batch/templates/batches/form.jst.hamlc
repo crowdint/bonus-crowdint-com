@@ -1,0 +1,27 @@
+%h1
+  New Batch
+
+%form{ action: '/batches', method: 'post' }
+  %input{ type: 'hidden', name: 'id', value: @id }
+  %input{ type: 'hidden', name: 'organization_id', value: @organization_id}
+
+  %label{ for: 'name' } Name:
+  %input{ type: 'text', name: 'name', value: '' }
+  %fieldset
+    %legend Members:
+
+    %table
+      %thead
+        %tr
+          %th Name
+          %th Points
+      %tbody
+        - for user in @users
+          %tr
+            %td= user.name
+            %td
+              %input{ type: 'hidden' name: 'user_batches[#{user.id}][id]', value: user.id }
+              %input{ type: 'text' name: 'user_batches[#{user.id}][balance]', value: user.balance }
+
+  %input{ type: 'submit', value: 'Save' }
+  %a{ href: '#' } Cancel

@@ -1,0 +1,20 @@
+%table
+  %thead
+    %tr
+      %th Name
+      %th Balance
+      %th Status
+      %th Report
+      %th Lock
+  %tfoot
+    %tr
+      %td
+        %nav
+          %a{href: "#"} Prev
+          %a{href: "#"} 2
+          %a{href: "#"} 1
+          %a{href: "#"} Next
+  %tbody
+
+%a.add-batch{ href: 'batches/new' }
+  Add new

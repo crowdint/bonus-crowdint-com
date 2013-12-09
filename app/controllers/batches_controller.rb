@@ -1,9 +1,10 @@
 class BatchesController < ApplicationController
+  before_action :set_organization
   before_action :set_batch, only: [:show, :update, :destroy]
 
   # GET /batches.json
   def index
-    @batches = Batch.all
+    @batches = @organization.batches
     render json: @batches, status: :ok
   end
 
@@ -14,9 +15,8 @@ class BatchesController < ApplicationController
 
   # POST /batches.json
   def create
-    @batch = Batch.new(batch_params)
-    if @batch.save
-      render json: @batch, status: :created, location: @batch
+    if @batch = @organization.batches.create(batch_params)
+      render json: @batch, status: :created
     else
       render json: @batch.errors, status: :unprocessable_entity
     end
@@ -39,10 +39,14 @@ class BatchesController < ApplicationController
 
   private
   def set_batch
-    @batch = Batch.find(params[:id])
+    @batch = @organization.batches.find(params[:id])
   end
 
   def batch_params
-    params.require(:batch).permit(:name, :allocation)
+    params.require(:batch).permit(:name, :allocation, :organization_id)
+  end
+
+  def set_organization
+    @organization = Organization.find(params[:organization_id])
   end
 end
