@@ -8,8 +8,8 @@
 
 .tab-content
   %article#batches.tab-pane
-    Batches
+
   %article#members.tab-pane
-    Members
+
   %article#settings.tab-pane
 

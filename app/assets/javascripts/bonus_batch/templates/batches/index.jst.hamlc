@@ -1,20 +1,29 @@
-%table
-  %thead
-    %tr
-      %th Name
-      %th Balance
-      %th Status
-      %th Report
-      %th Lock
-  %tfoot
-    %tr
-      %td
-        %nav
-          %a{href: "#"} Prev
-          %a{href: "#"} 2
-          %a{href: "#"} 1
-          %a{href: "#"} Next
-  %tbody
+.panel.panel-default
+  .panel-body
+    %table.table
+      %thead
+        %tr
+          %th Name
+          %th Balance
+          %th Status
+          %th Report
+          %th Lock
+      %tfoot
+        %tr
+          %td
 
-%a.add-batch{ href: 'batches/new' }
-  Add new
+            %ul.pagination
+              %li
+                %a{href: "#"} &laquo
+              %li
+                %a{href: "#"} 1
+              %li
+                %a{href: "#"} 2
+              %li
+                %a{href: "#"} &raquo
+
+      %tbody
+
+  .panel-footer
+    %a.add-batch{ href: 'batches/new' }
+      Add new
