@@ -12,6 +12,7 @@ class BonusBatch.Views.Organizations.ShowView extends BonusBatch.Views.Base
     @$("[data-target='##{@options.tab}']").tab('show')
     @$("##{@options.tab}").toggleClass('active')
     @renderBatches()
+    @renderMembers()
 
   tagName: 'section'
 
@@ -23,6 +24,11 @@ class BonusBatch.Views.Organizations.ShowView extends BonusBatch.Views.Base
     batches.fetch reset: true, data: { organization_id: @model.id }
 
   renderMembers: ->
+    members = new BonusBatch.Collections.MembersCollection()
+    membersIndexView = new BonusBatch.Views.Members.IndexView
+      el: @$('#members')
+      collection: members
+    members.fetch reset: true, data: { organization_id: @model.id }
 
   renderSettings: ->
     editView = new BonusBatch.Views.Organizations.EditView

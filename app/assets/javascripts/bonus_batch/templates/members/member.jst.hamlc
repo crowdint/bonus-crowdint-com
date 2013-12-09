@@ -1,0 +1,8 @@
+%td= @name
+%td 5
+%td
+  %button
+    Promote
+  %button
+    Borrar
+
