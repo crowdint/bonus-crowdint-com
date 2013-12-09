@@ -15,8 +15,8 @@ class BatchesController < ApplicationController
 
   # POST /batches.json
   def create
-    if @organization.batches.create(batch_params)
-      render json: @batch, status: :created, location: @batch
+    if @batch = @organization.batches.create(batch_params)
+      render json: @batch, status: :created
     else
       render json: @batch.errors, status: :unprocessable_entity
     end
@@ -43,7 +43,7 @@ class BatchesController < ApplicationController
   end
 
   def batch_params
-    params.require(:batch).permit(:name, :allocation)
+    params.require(:batch).permit(:name, :allocation, :organization_id)
   end
 
   def set_organization

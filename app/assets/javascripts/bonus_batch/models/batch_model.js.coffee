@@ -1,2 +1,2 @@
-class BonusBatch.Models.Batch extends Backbone.Model
-    urlRoot: '/batches'
+class BonusBatch.Models.BatchModel extends Backbone.Model
+  urlRoot: '/batches'
