@@ -1,5 +1,6 @@
 %td= @name
-%td 5
+%td= @user_rank
+%td Owner
 %td
   %button
     Promote

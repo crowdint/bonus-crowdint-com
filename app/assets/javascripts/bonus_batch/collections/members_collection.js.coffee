@@ -1,4 +1,4 @@
 class BonusBatch.Collections.MembersCollection extends Backbone.Collection
-  url: '/members'
+  url: '/users'
 
   model: BonusBatch.Models.MemberModel
