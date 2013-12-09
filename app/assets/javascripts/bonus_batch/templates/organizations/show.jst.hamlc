@@ -1,7 +1,10 @@
-%nav
-  %a{ href: 'batches' } Batches
-  %a{ href: 'members' } Members
-  %a{ href: 'settings' } Settings
+%ul.nav.nav-tabs
+  %li.active
+    %a{ href: 'batches' } Batches
+  %li
+    %a{ href: 'members' } Members
+  %li
+    %a{ href: 'settings' } Settings
 
 %article#batches{ style: 'display:none' }
   Batches

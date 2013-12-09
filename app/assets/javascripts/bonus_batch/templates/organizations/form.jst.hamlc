@@ -1,26 +1,30 @@
 %h1
   New Organization
 
-%form{  action: '/organizations', method: 'post'  }
-  %label
-    Name
-  %input{ name: 'name' }
+%form{  action: '/organizations', method: 'post', role: 'form', class: '.col-md-4' }
+  .form-group
+    %label
+      Name
+    %input{ name: 'name' }
 
   %h1
     Settings
 
-  %label
-    Total Allocation Points
-  %input
+  .form-group
+    %label
+      Total Allocation Points
+    %input
 
-  %label
-    Bonus Range
-  %input
+  .form-group
+    %label
+      Bonus Range
+    %input
 
-  %label
-    Minimum Bonus Assignment
-  %input
+  .form-group
+    %label
+      Minimum Bonus Assignment
+    %input
 
-  %input{ type: 'submit'}
+  %input{ type: 'submit', class: 'btn btn-default' }
 
   %a.cancel{ href: '#' }

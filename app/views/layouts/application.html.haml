@@ -5,15 +5,18 @@
     = stylesheet_link_tag    'application', media: 'all'
     = csrf_meta_tags
   %body
-    .container
-      %header
-        = render 'header'
+    .navbar-wrapper
+      .container
+        %header.navbar.navbar-inverse.navbar-static-top
+          = render 'header'
 
-      %main#main-container
-        = yield
+    .wrapper
+      .container
+        %main#main-container.panel.panel-default
+          = yield
 
-      %footer
-        = render 'footer'
+        %footer
+          = render 'footer'
 
     = javascript_include_tag 'application'
     = yield :scripts
