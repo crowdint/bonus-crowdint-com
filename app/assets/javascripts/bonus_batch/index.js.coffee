@@ -14,6 +14,7 @@ window.BonusBatch =
     Organizations: {}
     Batches:
       Users: {}
+    Members: {}
 
   dashboard: ->
     @Router = new BonusBatch.Routers.AppRouter()

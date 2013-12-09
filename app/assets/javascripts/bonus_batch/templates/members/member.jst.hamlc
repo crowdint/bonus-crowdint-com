@@ -1,0 +1,9 @@
+%td= @name
+%td= @user_rank
+%td Owner
+%td
+  %button
+    Promote
+  %button
+    Borrar
+

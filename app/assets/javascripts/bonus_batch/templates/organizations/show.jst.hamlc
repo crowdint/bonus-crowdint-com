@@ -1,10 +1,10 @@
 %ul.nav.nav-tabs
   %li.batches.active
-    %a{ "data-toggle" => "tab", "data-target" => '#batches',  href:  "/my-organizations/#{@id}/batches" } Batches
+    %a{ data: { toggle: 'tab', target: '#batches' },  href:  "/my-organizations/#{@id}/batches" } Batches
   %li.members
-    %a{ "data-toggle" => "tab", "data-target" => '#members',  href:  "/my-organizations/#{@id}/members" } Members
+    %a{ data: { toggle: 'tab', target: '#members' },  href:  "/my-organizations/#{@id}/members" } Members
   %li.settings
-    %a{ "data-toggle" => "tab", "data-target" => '#settings', href:  "/my-organizations/#{@id}/settings" } Settings
+    %a{ data: { toggle: 'tab', target: '#settings' }, href:  "/my-organizations/#{@id}/settings" } Settings
 
 .tab-content
   %article#batches.tab-pane

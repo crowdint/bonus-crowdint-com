@@ -5,7 +5,6 @@
 
   .panel-body
     %form{ action: '/batches', method: 'post', role: 'form' }
-      %input{ type: 'hidden', name: 'id', value: @id }
       %input{ type: 'hidden', name: 'organization_id', value: @organization_id}
 
       .form-group
@@ -17,5 +16,5 @@
 
       %table.batch-members.table
 
-    %a{ href: '#' } Cancel
+    %a{ href: "/my-organizations/#{@organization_id}" } Cancel
     %input{ type: 'submit', value: 'Save' }
