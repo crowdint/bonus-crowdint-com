@@ -1,14 +1,16 @@
-%form
+%form{ role: 'form' }
   %input{ type: 'hidden', name: 'id', value: @id }
-  %fieldset
+  .form-group
     %label{ for: 'total_allocation' } Total Allocation:
     %input{ name: 'total_allocation', value: @total_allocation }
 
+  .form-group
     %label Bonus Range:
     %input{ type: 'number', name: 'min_bonus', min: 1, max: 200, value: @min_bonus }
     to
     %input{ type: 'number', name: 'max_bonus', min: 1, max: 200, value: @max_bonus }
 
+  .form-group
     %label Minimum Bonus Assignment:
     %input{ type: 'number', name: 'min_assignments', min: 1, max: 5, value: @min_assignments }
 

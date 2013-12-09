@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.formparams
+//= require bootstrap.min
 //= require underscore
 //= require backbone
 //= require hamlcoffee
