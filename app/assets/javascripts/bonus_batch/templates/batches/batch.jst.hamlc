@@ -1,5 +1,5 @@
 %td
-  %a{ href: "batches/#{@id}" }= @name
+  %a{ href: "#{@organization.id}/batches/#{@id}" }= @name
 %td= @user_balance
 %td= @status
 %td
