@@ -1,0 +1,5 @@
+%td= @user_name
+%td
+  %input{ type: 'hidden', name: 'user_batches_attributes[#{@id}][id]', value: @id }
+  %input{ type: 'text', name: 'user_batches_attributes[#{@id}][balance]', value: @balance }
+
