@@ -7,7 +7,6 @@ class BonusBatch.Views.IndexView extends BonusBatch.Views.Base
     resources.each @addOne, @
 
   addOne: (resource) ->
-    console.log @
     resourceView = new @resourceView
       model: resource
 
