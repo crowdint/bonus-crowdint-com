@@ -1,5 +1,7 @@
-.panel-heading
-  Organizations
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title
+      Organizations
   %table.table
     %thead
       %tr
@@ -16,5 +18,6 @@
             %a{href: "#"} Next
     %tbody
 
-  %a.add-organization{ href: 'my-organizations/new' }
-    Add new
+  .panel-footer
+    %a.add-organization{ href: 'my-organizations/new' }
+      Add new
