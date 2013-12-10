@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = @organization.users
-    render json: @users, status: :ok
+    render json: @users, status: :ok, organization_id: @organization.id
   end
 
   # GET /users/1.json
