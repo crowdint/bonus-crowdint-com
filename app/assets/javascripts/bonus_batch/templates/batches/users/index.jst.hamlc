@@ -1,5 +1,6 @@
 %thead
   %tr
     %th Name
+    %th Message
     %th Points
   %tbody
