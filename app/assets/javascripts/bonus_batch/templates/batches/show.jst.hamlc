@@ -18,6 +18,10 @@
       %strong
         = @organization.min_assignments
 
+    %p
+      Current Balance:
+      %strong = @user_balance
+
     %legend
       Members:
 
