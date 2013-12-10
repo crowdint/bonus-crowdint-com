@@ -4,7 +4,7 @@ class BonusBatch.Routers.AppRouter extends Backbone.Router
     'my-organizations/:organization_id/batches/new'   : 'newBatch'
     'my-organizations/:organization_id/batches/:id'   : 'batchesShow'
     'my-organizations/:id(/:tab)'                     : 'organizationsShow'
-    'my-organizations'                                : 'dashboard'
+    'my-organizations(/)'                             : 'dashboard'
     'dashboard'                                       : 'dashboard'
 
   dashboard: ->

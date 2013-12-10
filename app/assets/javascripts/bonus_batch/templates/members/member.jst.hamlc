@@ -1,8 +1,8 @@
 %td= @name
 %td= @user_rank
-%td Owner
+%td= @user_organization.role
 %td
-  %button
+  %button.promote
     Promote
   %button
     Borrar
