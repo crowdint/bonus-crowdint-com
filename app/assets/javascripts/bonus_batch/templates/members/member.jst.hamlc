@@ -4,6 +4,6 @@
 %td
   %button.promote
     Promote
-  %button
+  %button.remove
     Borrar
 
