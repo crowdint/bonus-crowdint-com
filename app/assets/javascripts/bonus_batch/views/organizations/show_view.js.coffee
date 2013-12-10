@@ -31,6 +31,7 @@ class BonusBatch.Views.Organizations.ShowView extends BonusBatch.Views.Base
     batchesIndexView = new BonusBatch.Views.Batches.IndexView
       el: @$('#batches')
       collection: batches
+      organizationId: @model.id
     batches.fetch reset: true, data: { organization_id: @model.id }
 
   renderMembers: ->
