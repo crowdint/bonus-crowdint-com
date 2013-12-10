@@ -14,10 +14,10 @@ class BonusBatch.Views.InviteMembersView extends BonusBatch.Views.ModalView
   sendInvite: ->
     emails = @removeExtraComma($('#mail-recipient'))
     to      = emails
-    @send(new BonusBatch.Models.SendInvites, to)
+    @send(new BonusBatch.Models.Email, to)
 
   send: (model, to) ->
-    model.save {to: to, organization_id: @options['organization_id']},
+    model.save {to: to, organization_id: 1},
       success: (model, response, options) =>
         #TODO: show success message
         @$el.modal('hide')
