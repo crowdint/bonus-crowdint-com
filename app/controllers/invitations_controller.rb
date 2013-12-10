@@ -1,9 +1,7 @@
 class InvitationsController < ApplicationController
   def create
     organization = Organization.find(params[:organization_id])
-    status = BonusBatch::Notifier.send_invite params[:to], organization.name
-
-
-    render json: organization, status: status
+    Notifier.send_invite(params[:to], organization).deliver
+    render json: organization, status: :ok
   end
 end
