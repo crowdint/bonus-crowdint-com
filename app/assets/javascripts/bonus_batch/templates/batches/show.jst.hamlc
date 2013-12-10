@@ -1,1 +1,24 @@
-waka
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title
+      = @name
+
+  .panel-body
+    %legend
+      Bonus Details
+    %p
+      From
+      %strong
+        = @organization.min_bonus
+      To
+      %strong
+        = @organization.max_bonus
+    %p
+      Minimum Assignments:
+      %strong
+        = @organization.min_assignments
+
+    %legend
+      Members:
+
+    %table.batch-members.table

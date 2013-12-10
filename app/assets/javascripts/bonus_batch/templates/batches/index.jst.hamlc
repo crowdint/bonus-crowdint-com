@@ -25,5 +25,5 @@
       %tbody
 
   .panel-footer
-    %a.add-batch{ href: 'batches/new' }
+    %a.add-batch{ href: "/my-organizations/#{@organization_id}/batches/new" }
       Add new
