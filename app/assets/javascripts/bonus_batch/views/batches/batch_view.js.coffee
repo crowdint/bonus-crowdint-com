@@ -4,9 +4,10 @@ class BonusBatch.Views.Batches.BatchView extends BonusBatch.Views.Base
   tagName: 'tr'
 
   events:
-    'click button' : 'removeBatch'
+    'click .remove' : 'removeBatch'
 
   removeBatch: ->
-    @model.destroy()
+    data = { _method: 'delete', organization_id: @model.get('organization').id }
+    $.post("/batches/#{@model.id}", data)
     @remove()
     return false

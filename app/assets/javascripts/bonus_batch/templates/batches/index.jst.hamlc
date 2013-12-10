@@ -7,7 +7,7 @@
           %th Balance
           %th Status
           %th Report
-          %th Lock
+          %th Actions
       %tfoot
         %tr
           %td
