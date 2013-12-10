@@ -16,4 +16,6 @@ BonusBatch::Application.routes.draw do
 
   resources :dashboard, only: :index
 
+  post 'invitations', to: 'invitations#create', as: 'invitations'
+
 end

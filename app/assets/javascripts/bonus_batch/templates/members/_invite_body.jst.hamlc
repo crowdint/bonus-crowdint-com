@@ -1,0 +1,4 @@
+%label
+  Emails
+%br
+%input#mail-recipient{ type: 'text' }
