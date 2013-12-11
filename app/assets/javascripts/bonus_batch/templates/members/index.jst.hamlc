@@ -22,7 +22,7 @@
       %tbody
 
   .panel-footer
-    %a.add-member
+    %a.add-member{ data: { level: 'admin' } }
       Invite
 
 .modal.fade#invite-modal

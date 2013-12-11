@@ -2,6 +2,8 @@ class BonusBatch.Views.Organizations.ShowView extends BonusBatch.Views.Base
   initialize: (@options) ->
     @model.fetch()
     @model.on 'change', @renderSettings, @
+    @model.on 'change', (model) =>
+      @updateCurrentUserData organization_id: model.id, role: model.get('user_role')
 
   templatePath: 'organizations/show'
 
