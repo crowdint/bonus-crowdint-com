@@ -22,7 +22,8 @@
       %tbody
 
   .panel-footer
-    %a.add-member
-      Invite
+    - if @isAdmin()
+      %a.add-member
+        Invite
 
 .modal.fade#invite-modal

@@ -17,4 +17,5 @@
 //= require underscore
 //= require backbone
 //= require hamlcoffee
+//= require mixin_includer
 //= require bonus_batch

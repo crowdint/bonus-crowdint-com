@@ -3,7 +3,7 @@
     %a{ data: { toggle: 'tab', target: '#batches' },  href:  "/my-organizations/#{@id}/batches" } Batches
   %li.members
     %a{ data: { toggle: 'tab', target: '#members' },  href:  "/my-organizations/#{@id}/members" } Members
-  %li.settings
+  %li.settings{ data: { level: 'admin' } }
     %a{ data: { toggle: 'tab', target: '#settings' }, href:  "/my-organizations/#{@id}/settings" } Settings
 
 .tab-content
