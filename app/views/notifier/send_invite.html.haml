@@ -6,6 +6,6 @@
 
   %strong
     //TODO: Use proper host
-    = link_to 'Go to my organization', organization_path("#{@organization.id}"), host: "bonus_batch.dev"
+    = link_to 'Go to my organization', invitation_url(@organization.id)
 
 
