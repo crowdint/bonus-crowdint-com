@@ -23,9 +23,11 @@ group :assets do
   gem 'coffee-rails', '~> 4.0.0'
   gem 'haml_coffee_assets'
   gem 'execjs'
+
   gem 'sass-rails', '~> 4.0.0'
 end
 
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
