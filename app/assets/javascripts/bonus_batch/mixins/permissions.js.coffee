@@ -12,6 +12,8 @@ BonusBatch.Mixins.Permissions =
     isAdmin: ->
       BonusBatch.CurrentUserData.role in @adminRoles
 
+    canDelete: (role) ->
+      role in @adminRoles
     #Example of how can we extend functionallity, maybe, if the user have a
     #permissions array we could check it
     #canManageMembers: ->

@@ -22,8 +22,7 @@
       %tbody
 
   .panel-footer
-    - if @isAdmin()
-      %a.add-member
-        Invite
+    %a.add-member{ data: { level: 'admin' } }
+      Invite
 
 .modal.fade#invite-modal
