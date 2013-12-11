@@ -9,7 +9,6 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'rails', '4.0.1'
 gem 'backbone-on-rails'
-gem 'sqlite3'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
@@ -17,6 +16,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'konacha'
   gem 'rspec-rails'
+  gem 'sqlite3'
 end
 
 group :assets do
@@ -24,4 +24,8 @@ group :assets do
   gem 'haml_coffee_assets'
   gem 'execjs'
   gem 'sass-rails', '~> 4.0.0'
+end
+
+group :production do
+  gem 'pg'
 end
