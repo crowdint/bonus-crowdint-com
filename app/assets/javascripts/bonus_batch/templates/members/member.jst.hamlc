@@ -4,5 +4,5 @@
 %td
   %button.promote{ data: { level: 'admin' } }
     Promote
-  %button{ data: { level: 'admin' } }
+  %button.remove{ data: { level: 'admin' } }
     Borrar

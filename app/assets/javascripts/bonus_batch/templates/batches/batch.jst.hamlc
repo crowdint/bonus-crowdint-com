@@ -1,12 +1,12 @@
 %td
   %a{ href: "/my-organizations/#{@organization.id}/batches/#{@id}" }= @name
 %td= @user_balance
-%td= @status
+%td.status= @status
 %td
   %button
     Report
 %td
   %button.remove
     Remove
-  %button
+  %button.lock
     Lock

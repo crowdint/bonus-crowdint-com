@@ -3,4 +3,13 @@ class BonusBatch.Views.Batches.Users.UserView extends BonusBatch.Views.Base
 
   tagName: 'tr'
 
+  events:
+    'click .send-message'  :  'showMessageModal'
+
+  showMessageModal: ->
+    sendMessageView = new BonusBatch.Views.SendMessageView
+      model: @model
+    sendMessageView.render().show()
+    $('.submit').attr('disabled', 'disabled')
+
 
