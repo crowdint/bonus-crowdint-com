@@ -1,7 +1,6 @@
 %td= @name
 %td
-  %a.send-message
-    Message
+  Message
 %td
   %input{ type: 'hidden', name: 'user_batches_attributes[#{@id}][user_id]', value: @id }
   %input{ type: 'text', name: 'user_batches_attributes[#{@id}][balance]', value: @balance }

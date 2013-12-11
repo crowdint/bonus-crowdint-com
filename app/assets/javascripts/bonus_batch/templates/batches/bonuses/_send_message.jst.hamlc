@@ -1,0 +1,2 @@
+%textarea.message-text{ rows: '6', cols: '88' }
+  = @message

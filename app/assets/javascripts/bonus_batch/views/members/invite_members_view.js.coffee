@@ -2,7 +2,8 @@ class BonusBatch.Views.InviteMembersView extends BonusBatch.Views.ModalView
 
   title: 'Invite Members'
 
-  body: JST['bonus_batch/templates/members/_invite_body']()
+  body: ->
+    JST['bonus_batch/templates/members/_invite_body']()
 
   action: 'Invite'
 

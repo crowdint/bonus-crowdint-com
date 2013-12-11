@@ -14,10 +14,15 @@ class BonusBatch.Views.ModalView extends BonusBatch.Views.Base
   render: ->
     @$el.html @template
                     title: @title
-                    body: @body
+                    body: @body()
                     action: @action
                     cancel: @cancel
     @
+
+
+  destroy: ->
+    @$el.modal 'hide'
+    @remove()
 
   show: ->
     @$el.modal()

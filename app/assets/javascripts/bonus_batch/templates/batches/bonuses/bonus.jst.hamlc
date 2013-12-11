@@ -1,4 +1,6 @@
 %td= @name
-%td Message
+%td
+  %a.send-message
+    Message
 %td
   %input{ type: 'text', name: 'amount', value: @amount }
