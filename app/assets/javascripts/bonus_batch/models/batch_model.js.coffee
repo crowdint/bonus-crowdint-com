@@ -1,3 +1,5 @@
 class BonusBatch.Models.BatchModel extends Backbone.Model
   url: ->
-    "/batches/#{@id}?organization_id=#{@get('organization_id')}"
+    segments = ['/batches/', "?organization_id=#{@get('organization_id')}"]
+    segments.splice(1,0, @id) if @id
+    segments.join('')
