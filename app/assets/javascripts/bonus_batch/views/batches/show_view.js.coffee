@@ -4,14 +4,16 @@ class BonusBatch.Views.Batches.ShowView extends BonusBatch.Views.Base
 
   templatePath: 'batches/show'
 
-  beforeRender: ->
-    @el.id = @model.get 'id'
-
   tagName: 'section'
 
   afterRender: ->
-    userBatchesCollection = new BonusBatch.Collections.UserBatchesCollection()
-    userBatchesIndexView = new BonusBatch.Views.Batches.Users.IndexView
-      collection: userBatchesCollection
+    bonusesCollection = new BonusBatch.Collections.BonusesCollection()
+    bonusesCollection.remove bonusesCollection.get(BonusBatch.CurrentUserData.id)
+    bonusBatchesIndexView = new BonusBatch.Views.Batches.Bonuses.IndexView
+      collection: bonusesCollection
       el: @$('.batch-members')
-    userBatchesCollection.reset @model.get('user_batches')
+      #bonusesCollection.fetch reset:true, data: { batch_id: @model.id }
+    window.mod = @model
+    window.col = bonusesCollection
+    bonusesCollection.reset @model.get('user_batches')
+

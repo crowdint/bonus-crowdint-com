@@ -3,8 +3,8 @@ class CreateBonuses < ActiveRecord::Migration
     create_table :bonuses do |t|
       t.string :message
       t.integer :amount
-      t.integer :sender_id
       t.integer :receiver_id
+      t.belongs_to :user
       t.belongs_to :batch
       t.timestamps
     end

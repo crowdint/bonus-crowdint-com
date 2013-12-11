@@ -6,3 +6,7 @@
   border-top: none !important;
   border-radius: 0px 0px 4px 4px !important;
 }
+
+tfoot .pagination {
+  margin: 0;
+}
