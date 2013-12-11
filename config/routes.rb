@@ -12,6 +12,8 @@ BonusBatch::Application.routes.draw do
   resources :organizations
   resources :users
 
+  get '/invitations/:organization_id' => 'invitations#show'
+
   get '/my-organizations(/*organizations)' => 'dashboard#index'
 
   resources :dashboard, only: :index
