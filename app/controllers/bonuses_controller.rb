@@ -1,9 +1,10 @@
 class BonusesController < ApplicationController
+  before_action :set_user, only: [:index]
   before_action :set_bonus, only: [:show, :update, :destroy]
 
   # GET /bonuses.json
   def index
-    @bonuses = Bonus.all
+    @bonuses = @user.bonuses.by_batch params[:batch_id]
     render json: @bonuses, status: :ok
   end
 
@@ -46,5 +47,9 @@ class BonusesController < ApplicationController
 
   def bonus_params
     params.require(:bonus).permit(:message, :amount)
+  end
+
+  def set_user
+    @user = params[:user_id] && User.find(params[:user_id]) || current_user
   end
 end
