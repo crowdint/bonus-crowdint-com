@@ -24,6 +24,7 @@
     %tbody
 
   .panel-footer
-    %a.add-member{ href: '#' }
-      Invite
+    - if @isAdmin()
+      %a.add-member{ href: '#' }
+        Invite
 

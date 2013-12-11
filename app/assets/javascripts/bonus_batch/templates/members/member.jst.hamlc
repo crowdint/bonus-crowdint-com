@@ -2,8 +2,7 @@
 %td= @user_rank
 %td= @user_organization.role
 %td
-  %button.promote
+  %button.promote{ data: { level: 'admin' } }
     Promote
-  %button
+  %button{ data: { level: 'admin' } }
     Borrar
-
