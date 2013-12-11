@@ -25,11 +25,9 @@ class BonusBatch.Views.Batches.BatchView extends BonusBatch.Views.Base
 
   updateLock: (status)->
     if status is 1
-      console.log status
       @$('.lock').text('Unlock')
       @$('.status').text('Closed')
     else
-      console.log status
       @$('.lock').text('Lock')
       @$('.status').text('Open')
 
