@@ -1,0 +1,11 @@
+%p
+  "you were invited to be part of the #{@organization.name}'s BonusBatch!!"
+
+%p
+  Below you will find your access link
+
+  %strong
+    //TODO: Use proper host
+    = link_to 'Go to my organization', organization_path("#{@organization.id}"), host: "bonus_batch.dev"
+
+
