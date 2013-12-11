@@ -4,6 +4,7 @@ BonusBatch.Mixins.Permissions =
 
   updateCurrentUserData: (attributes) ->
     _.extend BonusBatch.CurrentUserData, attributes
+    @checkPermissions()
 
   #This way we are forced to add an if isAdmin validation for every needed element
   permissionHelpers:
