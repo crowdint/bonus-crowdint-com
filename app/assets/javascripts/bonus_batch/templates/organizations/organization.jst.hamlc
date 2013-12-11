@@ -2,5 +2,6 @@
   %a{ href: "my-organizations/#{@id}" }= @name
 %td= @user_role
 %td
-  %button
-    Borrar
+  - if @canDelete(@user_role)
+    %button
+      Borrar
