@@ -10,11 +10,12 @@ class BonusBatch.Views.Batches.NewView extends BonusBatch.Views.New
   id: 'new-batch'
 
   afterRender: ->
-    userBatchesCollection = new BonusBatch.Collections.MembersCollection()
+    membersCollection = new BonusBatch.Collections.MembersCollection()
     userBatchesIndexView = new BonusBatch.Views.Batches.Users.IndexView
-      collection: userBatchesCollection
+      collection: membersCollection
       el: @$('.batch-members')
-    userBatchesCollection.fetch
+
+    membersCollection.fetch
       reset: true
       data: { organization_id: @organization_id }
 

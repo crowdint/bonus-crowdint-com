@@ -31,8 +31,8 @@ class BonusBatch.Routers.AppRouter extends Backbone.Router
       el: $('#main-container')
 
   batchesShow: (organization_id, batch_id) ->
-    batch = new BonusBatch.Models.BatchModel id: batch_id
+    batch = new BonusBatch.Models.BatchModel organization_id: organization_id, id: batch_id
     batchShowView = new BonusBatch.Views.Batches.ShowView
       model: batch
       el: $('#main-container')
-    batch.fetch data: { organization_id: organization_id }
+    batch.fetch()

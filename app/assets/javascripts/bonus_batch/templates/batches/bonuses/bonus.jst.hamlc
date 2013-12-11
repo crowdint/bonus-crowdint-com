@@ -1,0 +1,4 @@
+%td= @name
+%td Message
+%td
+  %input{ type: 'text', name: 'amount', value: @amount }
