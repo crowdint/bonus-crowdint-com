@@ -1,5 +1,11 @@
-class InvitationsController < ActionController::Base
-  before_action :get_organization, :set_session
+class InvitationsController < ApplicationController
+  before_action :get_organization
+  before_action :set_session, only: [:show]
+
+  def create
+    Notifier.send_invite(params[:to], @organization).deliver
+    render json: @organization, status: :ok
+  end
 
   def show
   end

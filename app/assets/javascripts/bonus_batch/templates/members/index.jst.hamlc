@@ -1,30 +1,29 @@
 .panel.panel-default
-  .panel-heading
-    %h3.panel-title
-      Members
-  %table.table
-    %thead
-      %tr
-        %th Name
-        %th Rank
-        %th Role
-        %th Actions
-    %tfoot
-      %tr
-        %td
-          %ul.pagination
-            %li
-              %a{ href: "#" } &laquo
-            %li
-              %a{ href: "#" } 1
-            %li
-              %a{ href: "#" } 2
-            %li
-              %a{ href: "#" } &raquo
-    %tbody
+  .panel-body
+    %table.table
+      %thead
+        %tr
+          %th Name
+          %th Rank
+          %th Role
+          %th Actions
+      %tfoot
+        %tr
+          %td
+            %ul.pagination
+              %li
+                %a{ href: "#" } &laquo
+              %li
+                %a{ href: "#" } 1
+              %li
+                %a{ href: "#" } 2
+              %li
+                %a{ href: "#" } &raquo
+      %tbody
 
   .panel-footer
     - if @isAdmin()
-      %a.add-member{ href: '#' }
+      %a.add-member
         Invite
 
+.modal.fade#invite-modal

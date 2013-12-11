@@ -1,0 +1,14 @@
+.modal-dialog
+  .modal-content
+    .modal-header
+      %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+      %h4.modal-title
+        = @title
+    .modal-body
+      %p
+        != @body
+    .modal-footer
+      %a{ data: { dismiss: 'modal', type: 'button'}
+        = @cancel
+      %button.btn.btn-primary.submit{type: "button"}
+        = @action
