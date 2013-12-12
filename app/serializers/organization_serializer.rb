@@ -3,6 +3,7 @@ class OrganizationSerializer < ActiveModel::Serializer
     :max_bonus, :min_assignments
 
   def user_role
-    object.user_organizations.where(user: scope).first.role
+    organization = object.user_organizations.where(user: scope).first
+    organization && organization.role
   end
 end
