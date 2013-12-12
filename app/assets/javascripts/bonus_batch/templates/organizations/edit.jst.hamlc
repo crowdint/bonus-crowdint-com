@@ -3,6 +3,10 @@
     %form{ role: 'form' }
       %input{ type: 'hidden', name: 'id', value: @id }
       .form-group
+        %label Name:
+        %input{ type: 'text', name: 'name', value: @name }
+
+      .form-group
         %label{ for: 'total_allocation' } Total Allocation:
         %input{ name: 'total_allocation', value: @total_allocation }
 
