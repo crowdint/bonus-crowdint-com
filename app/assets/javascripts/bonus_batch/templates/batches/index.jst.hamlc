@@ -23,6 +23,6 @@
 
       %tbody
 
-  .panel-footer
+  .panel-footer{ data: { level: 'admin'} }
     %a.add-batch{ href: "/my-organizations/#{@organization_id}/batches/new" }
       Add new
