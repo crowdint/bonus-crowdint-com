@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 
   has_many :bonuses
 
+  accepts_nested_attributes_for :user_organizations
+
   def received_bonuses
     Bonus.for_user self
   end

@@ -25,6 +25,7 @@ class BonusBatch.Views.Batches.BatchView extends BonusBatch.Views.Base
     @updateLock(@model.get('status'))
 
   updateLock: (status)->
+    #TODO: Refactor this logic
     if status is 1
       @$('.lock').text('Unlock')
       @$('.status').text('Closed')

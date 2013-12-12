@@ -15,8 +15,8 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1.json
   def update
-    if @user.update(user_params)
-      render json: @user, status: :ok
+    if @user.update(clean_params)
+      render json: @user, status: :ok, organization_id: @organization.id
     else
       render json: @user.errors, status: :unprocessable_entity
     end
@@ -34,7 +34,14 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.permit[:organization_id, user_organizations_attributes: [:id, :role]]
+    params.permit(:organization_id, user_organizations_attributes: [:id, :role])
+  end
+
+  def clean_params
+    #TODO: kill me please! I mean refactor me :)
+    custom_params = user_params
+    custom_params.delete(:organization_id)
+    custom_params
   end
 
   def set_organization
