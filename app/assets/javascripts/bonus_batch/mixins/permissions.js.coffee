@@ -19,6 +19,12 @@ BonusBatch.Mixins.Permissions =
     canDeleteOrganization: (role) ->
       role is 'owner'
 
+    canDeleteMember: (member) ->
+      @isAdmin() and !@mySelf(member)
+
+    mySelf: (member) ->
+      BonusBatch.CurrentUserData.id is member.id
+
   #Checkpermission: we just need to add a data attribute level with one of the following:
   #- owner
   #- admin

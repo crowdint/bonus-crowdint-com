@@ -4,5 +4,6 @@
 %td
   %button.set-role{ data: { level: 'admin' } }
     Promote
-  %button.remove{ data: { level: 'admin' } }
-    Borrar
+  - if @canDeleteMember(@)
+    %button.remove
+      Borrar
