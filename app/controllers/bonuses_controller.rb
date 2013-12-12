@@ -46,7 +46,7 @@ class BonusesController < ApplicationController
   end
 
   def bonus_params
-    params.require(:bonus).permit(:message, :amount)
+    params.require(:bonus).permit(:message, :amount, :batch_id, :user_id, :receiver_id)
   end
 
   def set_user

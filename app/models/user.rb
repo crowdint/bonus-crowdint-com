@@ -12,6 +12,6 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :user_organizations
 
   def received_bonuses
-    bonuses.for_user self
+    Bonus.for_user self
   end
 end

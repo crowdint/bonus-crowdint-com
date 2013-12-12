@@ -23,7 +23,7 @@ class UserBonusPresenter
     @bonus && @bonus.id
   end
 
-  def user_id
+  def receiver_id
     @user.id
   end
 
