@@ -1,2 +1,6 @@
 .panel.panel-default
+  .panel-heading
+    %h3.panel-title
+      New Organization
+
   != JST['bonus_batch/templates/organizations/form'] @

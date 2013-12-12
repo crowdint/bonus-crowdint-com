@@ -12,9 +12,7 @@ class BonusBatch.Routers.AppRouter extends Backbone.Router
     $('#main-container').html dashBoardView.render().el
 
   newOrganization: ->
-    newOrganizationModel =  new BonusBatch.Models.OrganizationModel()
-    newOrganizationView = new BonusBatch.Views.Organizations.NewView
-      model: newOrganizationModel
+    newOrganizationView = new BonusBatch.Views.Organizations.NewView()
     $('#main-container').html newOrganizationView.render().el
 
   organizationsShow: (id, tab = 'batches') ->
