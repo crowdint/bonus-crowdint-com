@@ -7,10 +7,16 @@ class BonusBatch.Views.Batches.ShowView extends BonusBatch.Views.Base
   tagName: 'section'
 
   afterRender: ->
-    bonusesCollection = new BonusBatch.Collections.BatchBonusesCollection
+    @bonusesCollection = new BonusBatch.Collections.BatchBonusesCollection
       batch_id: @model.get('id')
     bonusBatchesIndexView = new BonusBatch.Views.Batches.Bonuses.IndexView
-      collection: bonusesCollection
+      collection: @bonusesCollection
       el: @$('.batch-members')
-    bonusesCollection.fetch reset:true
+    @bonusesCollection.fetch reset:true
+
+  events:
+    'click input[type="submit"]' : 'saveBonuses'
+
+  saveBonuses: ->
+    @bonusesCollection.saveAll()
 

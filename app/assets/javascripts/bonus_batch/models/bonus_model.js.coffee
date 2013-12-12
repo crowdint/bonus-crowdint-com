@@ -1,6 +1,10 @@
 class BonusBatch.Models.BonusModel extends Backbone.Model
-  urlRoot: '/bonuses'
-  url: '/bonuses'
+  initialize: ->
+    @set 'user_id', BonusBatch.CurrentUserData.id
 
-  defaults:
-    amount: 0
+  urlRoot: '/bonuses'
+
+  url: ->
+    segments = ['/bonuses/']
+    segments.push @id if @id
+    segments.join('')

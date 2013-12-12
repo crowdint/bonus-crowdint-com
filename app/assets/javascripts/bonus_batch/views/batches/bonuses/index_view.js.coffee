@@ -4,4 +4,3 @@ class BonusBatch.Views.Batches.Bonuses.IndexView extends BonusBatch.Views.IndexV
     super
 
   templatePath: 'batches/bonuses/index'
-

@@ -3,4 +3,4 @@
   %a.send-message
     Message
 %td
-  %input{ type: 'text', name: 'amount', value: @amount }
+  %input.amount{ type: 'text', name: 'amount', value: @amount }

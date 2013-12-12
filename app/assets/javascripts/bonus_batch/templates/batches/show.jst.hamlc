@@ -26,3 +26,5 @@
       Members:
 
     %table.batch-members.table
+
+    %input{ type: 'submit', value: 'Save' }
