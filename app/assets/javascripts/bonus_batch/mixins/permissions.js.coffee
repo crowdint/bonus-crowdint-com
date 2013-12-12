@@ -15,15 +15,11 @@ BonusBatch.Mixins.Permissions =
 
     canDelete: (role) ->
       role in @adminRoles
-    #Example of how can we extend functionallity, maybe, if the user have a
-    #permissions array we could check it
-    #canManageMembers: ->
-      #permissions = _.intersection BonusBatch.CurrentUserData.perrmissions, ['canPromoteMember', 'canDeleteMember']
-      #!_.isEmpty permissions
 
+    canDeleteOrganization: (role) ->
+      role is 'owner'
 
-
-  #This way, we just need to add a data attribute level with one of the following:
+  #Checkpermission: we just need to add a data attribute level with one of the following:
   #- owner
   #- admin
   #- member (if something is specific to members but not admin/owners)
