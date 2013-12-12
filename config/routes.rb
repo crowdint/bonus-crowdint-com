@@ -8,7 +8,11 @@ BonusBatch::Application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'crowdint_auth/omniauth_callbacks' }
 
   resources :bonuses
-  resources :batches
+
+  resources :batches do
+    resources :bonuses, only: :index, module: :batches
+  end
+
   resources :organizations
   resources :users
 
