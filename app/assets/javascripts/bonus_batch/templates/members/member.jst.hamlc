@@ -2,8 +2,9 @@
 %td= @user_rank
 %td.role= @user_organization.role
 %td
-  %button.set-role{ data: { level: 'admin' } }
-    Promote
+  - if @isAdmin(@)
+    %button.set-role
+      Promote
   - if @canDeleteMember(@)
     %button.remove
       Borrar

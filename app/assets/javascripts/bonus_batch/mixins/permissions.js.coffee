@@ -10,8 +10,8 @@ BonusBatch.Mixins.Permissions =
   permissionHelpers:
     adminRoles: ['admin', 'owner']
 
-    isAdmin: ->
-      BonusBatch.CurrentUserData.role in @adminRoles
+    isAdmin: (member = BonusBatch.CurrentUserData)->
+      member.role in @adminRoles
 
     canDelete: (role) ->
       role in @adminRoles
