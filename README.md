@@ -9,4 +9,4 @@ We specialize in building and growing online retail stores. We don’t work with
 
 ## License
 
-Kiitos is released under the [MIT License](http://www.opensource.org/licenses/MIT).
+BonusBatch is released under the [MIT License](http://www.opensource.org/licenses/MIT).
