@@ -1,6 +1,11 @@
-%td= @name
 %td
+  %input{ type: 'hidden', name: "bonuses_attributes[#{@batchUserId()}][id]", value: @id }
+  %input{ type: 'hidden', name: "bonuses_attributes[#{@batchUserId()}][receiver_id]", value: @receiver_id }
+  %input{ type: 'hidden', name: "bonuses_attributes[#{@batchUserId()}][user_id]", value: @user_id }
+  = @name
+%td
+  %input{ type: 'hidden', name: "bonuses_attributes[#{@batchUserId()}][message]", value: @message }
   %a.send-message
     Message
 %td
-  %input.amount{ type: 'text', name: 'amount', value: @amount }
+  %input.amount{ type: 'text', name: "bonuses_attributes[#{@batchUserId()}][amount]", value: @amount }

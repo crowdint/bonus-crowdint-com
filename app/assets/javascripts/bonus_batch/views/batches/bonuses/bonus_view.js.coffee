@@ -17,3 +17,6 @@ class BonusBatch.Views.Batches.Bonuses.BonusView extends BonusBatch.Views.Base
     amount = $(event.target).val()
     @model.set 'amount', amount
 
+  helpers:
+    batchUserId: ->
+      "#{@batch_id}#{@receiver_id}"

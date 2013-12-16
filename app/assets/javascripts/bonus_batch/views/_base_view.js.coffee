@@ -2,7 +2,7 @@ class BonusBatch.Views.Base extends Backbone.View
   @include BonusBatch.Mixins.Permissions
 
   template: (params = {}) ->
-    JST["bonus_batch/templates/#{@templatePath}"] _.extend(params, @permissionHelpers)
+    JST["bonus_batch/templates/#{@templatePath}"] _.extend(params, @permissionHelpers, @helpers)
 
   model: new Backbone.Model
 
