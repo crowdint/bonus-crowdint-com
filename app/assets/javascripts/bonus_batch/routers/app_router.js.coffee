@@ -1,11 +1,12 @@
 class BonusBatch.Routers.AppRouter extends Backbone.Router
   routes:
-    'my-organizations/new'                            : 'newOrganization'
-    'my-organizations/:organization_id/batches/new'   : 'newBatch'
-    'my-organizations/:organization_id/batches/:id'   : 'batchesShow'
-    'my-organizations/:id(/:tab)'                     : 'organizationsShow'
-    'my-organizations(/)'                             : 'dashboard'
-    'dashboard'                                       : 'dashboard'
+    'my-organizations/new'                                  : 'newOrganization'
+    'my-organizations/:organization_id/members/:id'          : 'membersShow'
+    'my-organizations/:organization_id/batches/new'         : 'newBatch'
+    'my-organizations/:organization_id/batches/:id'         : 'batchesShow'
+    'my-organizations/:id(/:tab)'                           : 'organizationsShow'
+    'my-organizations(/)'                                   : 'dashboard'
+    'dashboard'                                             : 'dashboard'
 
   dashboard: ->
     dashBoardView = new BonusBatch.Views.DashboardView()
@@ -34,3 +35,14 @@ class BonusBatch.Routers.AppRouter extends Backbone.Router
       model: batch
       el: $('#main-container')
     batch.fetch()
+
+  membersShow: (organization_id, member_id) ->
+    member = new BonusBatch.Models.MemberModel
+      organization_id: organization_id
+      id: member_id
+    memberHistoryView = new BonusBatch.Views.Members.MemberHistoryView
+      model: member
+      el: $('#main-container')
+    member.fetch data: { organization_id: organization_id }
+
+
