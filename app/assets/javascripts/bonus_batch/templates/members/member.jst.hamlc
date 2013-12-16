@@ -1,4 +1,6 @@
-%td= @name
+%td
+  %a{ href: "members/#{@id}" }
+    = @name
 %td= @user_rank
 %td.role= @user_organization.role
 %td

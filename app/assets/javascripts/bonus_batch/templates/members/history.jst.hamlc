@@ -1,0 +1,38 @@
+%legend
+  Received Bonuses
+
+%table.table.received
+  %thead
+    %tr
+      %th From
+      %th Message
+      %th Amount
+  %tbody
+    - _.each @received_bonuses, (bonus) ->
+      %tr
+        != JST['bonus_batch/templates/members/_received_bonuses'](bonus)
+    %tr.total-amount
+      %td{ colspan: 2 }
+        Total
+      %td
+        = @total_received_amount
+
+%legend
+  Given Bonuses
+
+%table.table.given
+  %thead
+    %tr
+      %th To
+      %th Message
+      %th Amount
+  %tbody
+    - _.each @given_bonuses, (bonus) ->
+      %tr
+        != JST['bonus_batch/templates/members/_given_bonuses'](bonus)
+    %tr.total-amount
+      %td{ colspan: 2 }
+        Total
+      %td
+        = @total_given_amount
+
