@@ -6,6 +6,9 @@ class BonusBatch.Views.Batches.ShowView extends BonusBatch.Views.Base
 
   tagName: 'section'
 
+  events:
+    'click input[type="submit"]' : 'handleFormSubmit'
+
   afterRender: ->
     @bonusesCollection = new BonusBatch.Collections.BatchBonusesCollection
       batch_id: @model.get('id')
@@ -14,5 +17,5 @@ class BonusBatch.Views.Batches.ShowView extends BonusBatch.Views.Base
       el: @$('.batch-members')
     @bonusesCollection.fetch reset:true
 
-  events:
-    'click input[type="submit"]' : 'handleFormSubmit'
+  handleSuccess: ->
+    console.log 'success'
