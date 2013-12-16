@@ -25,6 +25,11 @@
     %legend
       Members:
 
-    %table.batch-members.table
+    %form
+      %input{ type: 'hidden', name: 'id', value: @id }
+      %input{ type: 'hidden', name: 'organization_id', value: @organization.id }
+      %input{ type: 'hidden', name: "user_batches_attributes[#{@id}][balance]", value: @user_balance }
+      %input{ type: 'hidden', name: "user_batches_attributes[#{@id}][id]", value: @user_batch_id }
+      %table.batch-members.table
 
-    %input{ type: 'submit', value: 'Save' }
+      %input{ type: 'submit', value: 'Save' }

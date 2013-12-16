@@ -44,7 +44,7 @@ class BatchesController < ApplicationController
 
   def batch_params
     params.permit(:name, :allocation, :organization_id, :status,
-                  user_batches_attributes: [:balance, :user_id])
+                  user_batches_attributes: [:balance, :user_id, :batch_id, :id])
   end
 
   def set_organization

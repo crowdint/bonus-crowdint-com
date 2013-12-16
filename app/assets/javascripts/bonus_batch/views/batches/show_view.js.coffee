@@ -15,8 +15,4 @@ class BonusBatch.Views.Batches.ShowView extends BonusBatch.Views.Base
     @bonusesCollection.fetch reset:true
 
   events:
-    'click input[type="submit"]' : 'saveBonuses'
-
-  saveBonuses: ->
-    @bonusesCollection.saveAll()
-
+    'click input[type="submit"]' : 'handleFormSubmit'
