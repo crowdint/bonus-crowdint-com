@@ -5,7 +5,7 @@ class BonusBatch.Views.Batches.Bonuses.BonusView extends BonusBatch.Views.Base
 
   events:
     'click .send-message'   : 'showMessageModal'
-    'change .amount'        : 'updateAmount'
+    'keyup .amount'         : 'updateAmount'
 
   showMessageModal: ->
     sendMessageView = new BonusBatch.Views.Batches.Bonuses.SendMessageView

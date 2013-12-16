@@ -4,4 +4,6 @@
     %th Message
     %th Points
   %tbody
-
+    %tr
+      %td{ colspan: 2 } Total:
+      %td#total-bonus
