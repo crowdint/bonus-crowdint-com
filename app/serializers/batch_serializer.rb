@@ -1,10 +1,14 @@
 class BatchSerializer < ActiveModel::Serializer
-  attributes :id, :name, :allocation, :user_balance, :status
+  attributes :id, :name, :allocation, :user_balance, :current_balance, :status
   has_many :user_batches
   has_one :organization
 
   def user_balance
     user = object.user_batches.where(user: scope).first
     user && user.balance
+  end
+
+  def current_balance
+    object.bonuses.where(user: scope).sum(:amount)
   end
 end
