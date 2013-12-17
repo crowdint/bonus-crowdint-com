@@ -3,8 +3,7 @@
 %td= @remainingBalance()
 %td.status= @status
 %td
-  %button
-    Report
+  %a{ href: "/my-organizations/#{@organization.id}/batches/#{@id}/report" } View
 %td
   %button.remove
     Remove

@@ -6,6 +6,6 @@ class BonusSerializer < ActiveModel::Serializer
   end
 
   def sender_name
-    object.user.name
+    object.user_name
   end
 end

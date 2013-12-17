@@ -2,7 +2,8 @@
   margin-right: 30px !important;
 }
 
-#batches .panel, #settings .panel, #members .panel {
+/*TODO: Move to a single class */
+#batches .panel, #settings .panel, #members .panel, #list .panel, #bars .panel, #pie .panel {
   border-top: none !important;
   border-radius: 0px 0px 4px 4px !important;
 }
