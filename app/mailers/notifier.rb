@@ -1,5 +1,5 @@
 class Notifier < ActionMailer::Base
-  default from: 'bonus_batch_roboth@crowdint.com'
+  default from: 'bonus_batch_robot@crowdint.com'
 
   def send_invite(to, organization)
     @organization = organization
