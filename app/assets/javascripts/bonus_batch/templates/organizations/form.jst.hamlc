@@ -19,4 +19,5 @@
       %label Minimum Bonus Assignment:
       %input{ type: 'number', name: 'min_assignments', min: 1, max: 5, value: @min_assignments }
 
+    %a{ href: '/my-organizations' } Cancel
     %input{ type: 'submit', value: 'Save' }
