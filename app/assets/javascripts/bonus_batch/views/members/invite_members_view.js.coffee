@@ -11,10 +11,11 @@ class BonusBatch.Views.InviteMembersView extends BonusBatch.Views.ModalView
   cancel: 'Cancel'
 
   events: ->
-    'click .submit' : 'sendInvite'
+    'click .submit'       : 'sendInvite'
+    'click .cancel-form'  : 'destroy'
 
   sendInvite: ->
-    emails = @removeExtraComma($('#mail-recipient'))
+    emails = @removeExtraComma(@$('#mail-recipient'))
     to      = emails
     @send(new BonusBatch.Models.Email, to)
 
@@ -25,6 +26,8 @@ class BonusBatch.Views.InviteMembersView extends BonusBatch.Views.ModalView
         @$el.modal('hide')
       error: (model, error, options) =>
         #TODO: show validation errors
+      complete: =>
+        @destroy()
 
   removeExtraComma: (recipient) ->
     emails = recipient.val()
