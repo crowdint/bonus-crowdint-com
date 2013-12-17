@@ -4,7 +4,7 @@
     %strong= @organization.name
 
   .sign
-    %img{ src: '/assets/crowd.png'}
+    = image_tag 'crowd.png'
     .google-apps
       = link_to google_apps_sign_in_path do
-        %img{ src: '/assets/google-apps.gif' }
+        = image_tag 'google-apps.gif'
