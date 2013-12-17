@@ -1,8 +1,8 @@
-class BonusBatch.Views.Batches.ShowView extends BonusBatch.Views.Base
+class BonusBatch.Views.Batches.EditView extends BonusBatch.Views.Base
   initialize: ->
     @model.on 'change', @render, @
 
-  templatePath: 'batches/show'
+  templatePath: 'batches/edit'
 
   tagName: 'section'
 
@@ -28,5 +28,5 @@ class BonusBatch.Views.Batches.ShowView extends BonusBatch.Views.Base
     console.log 'success'
 
   helpers:
-    currentBalance: ->
+    remainingBalance: ->
       @user_balance - @current_balance

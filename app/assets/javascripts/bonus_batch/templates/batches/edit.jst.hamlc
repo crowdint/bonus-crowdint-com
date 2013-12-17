@@ -20,7 +20,7 @@
 
     %p
       Current Balance:
-      %strong = @currentBalance()
+      %strong = @remainingBalance()
 
     %legend
       Members:
@@ -32,4 +32,5 @@
       %input{ type: 'hidden', name: "user_batches_attributes[#{@id}][id]", value: @user_batch_id }
       %table.batch-members.table
 
+      %a{ href: "/my-organizations/#{@organization.id}/batches" } Cancel
       %input{ type: 'submit', value: 'Save' }

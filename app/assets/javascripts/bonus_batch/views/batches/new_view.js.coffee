@@ -3,7 +3,7 @@ class BonusBatch.Views.Batches.NewView extends BonusBatch.Views.New
     @organization_id = @model.get('organization_id')
     @render()
 
-  templatePath: 'batches/form'
+  templatePath: 'batches/new'
 
   tagName: 'section'
 

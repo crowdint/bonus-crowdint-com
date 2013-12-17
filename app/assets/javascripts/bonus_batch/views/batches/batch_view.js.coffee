@@ -33,3 +33,7 @@ class BonusBatch.Views.Batches.BatchView extends BonusBatch.Views.Base
       @$('.lock').text('Lock')
       @$('.status').text('Open')
 
+  helpers:
+    remainingBalance: ->
+      @user_balance - @current_balance
+
