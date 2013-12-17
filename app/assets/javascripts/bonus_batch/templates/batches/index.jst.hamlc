@@ -8,18 +8,18 @@
           %th Status
           %th Report
           %th Actions
-      %tfoot
-        %tr
-          %td{ colspan: 5 }
-            %ul.pagination
-              %li
-                %a{ href: '#' } &laquo
-              %li
-                %a{ href: '#' } 1
-              %li
-                %a{ href: '#' } 2
-              %li
-                %a{ href: '#' } &raquo
+      -#%tfoot
+        -#%tr
+          -#%td{ colspan: 5 }
+            -#%ul.pagination
+              -#%li
+                -#%a{ href: '#' } &laquo
+              -#%li
+                -#%a{ href: '#' } 1
+              -#%li
+                -#%a{ href: '#' } 2
+              -#%li
+                -#%a{ href: '#' } &raquo
 
       %tbody
 
