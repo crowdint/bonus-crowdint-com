@@ -5,4 +5,4 @@ class BonusBatch.Views.Organizations.EditView extends BonusBatch.Views.Base
     "click input[type='submit']" : 'handleFormSubmit'
 
   handleSuccess: ->
-    console.log 'success'
+    BonusBatch.Router.navigate "/my-organizations/#{@model.get('id')}/batches", trigger: true

@@ -1,5 +1,5 @@
 class BonusBatch.Views.Base extends Backbone.View
-  @include BonusBatch.Mixins.Permissions
+  @include BonusBatch.Mixins.Permissions, BonusBatch.Mixins.Loading
 
   template: (params = {}) ->
     JST["bonus_batch/templates/#{@templatePath}"] _.extend(params, @permissionHelpers, @helpers)
@@ -17,6 +17,7 @@ class BonusBatch.Views.Base extends Backbone.View
 
   handleFormSubmit: (event) =>
     event.preventDefault()
+    @renderLoader @$el
     @model.clear silent: true
     @model.set @params(),
       silent: true

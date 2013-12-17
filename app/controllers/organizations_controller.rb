@@ -25,7 +25,7 @@ class OrganizationsController < ApplicationController
   # PATCH/PUT /organizations/1.json
   def update
     if @organization.update(organization_params)
-      head :no_content
+      render json: @organization, status: :ok
     else
       render json: @organization.errors, status: :unprocessable_entity
     end
