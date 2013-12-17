@@ -1,0 +1,6 @@
+%td
+  = @name
+%td
+  = @message
+%td
+  = @amount

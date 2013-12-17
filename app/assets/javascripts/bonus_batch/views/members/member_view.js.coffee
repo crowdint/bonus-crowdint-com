@@ -5,7 +5,7 @@ class BonusBatch.Views.Members.MemberView extends BonusBatch.Views.Base
 
   events:
     'click .remove'       : 'removeMember'
-    'click .set-role'  : 'setUserRole'
+    'click .set-role'     : 'setUserRole'
 
   removeMember: ->
     organization_id = @model.get('user_organization').organization_id
@@ -29,4 +29,3 @@ class BonusBatch.Views.Members.MemberView extends BonusBatch.Views.Base
 
   updateRole: (element, role) ->
     @$(element).parent().siblings('.role').text("#{role}")
-

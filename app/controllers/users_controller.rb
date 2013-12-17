@@ -38,10 +38,7 @@ class UsersController < ApplicationController
   end
 
   def clean_params
-    #TODO: kill me please! I mean refactor me :)
-    custom_params = user_params
-    custom_params.delete(:organization_id)
-    custom_params
+    params.permit(user_organizations_attributes: [:id, :role])
   end
 
   def set_organization

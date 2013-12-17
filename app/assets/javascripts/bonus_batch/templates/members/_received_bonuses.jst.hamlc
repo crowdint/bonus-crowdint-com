@@ -1,0 +1,6 @@
+%td
+  = @sender_name
+%td
+  = @message
+%td
+  = @amount
