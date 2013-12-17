@@ -1,5 +1,10 @@
-%p
-  You were invited to be a Member of:
-  %strong= @organization.name
+.sign-box
+  %p
+    You were invited to be a Member of:
+    %strong= @organization.name
 
-= link_to 'Sign With Google Apps', google_apps_sign_in_path
+  .sign
+    %img{ src: '/assets/crowd.png'}
+    .google-apps
+      = link_to google_apps_sign_in_path do
+        %img{ src: '/assets/google-apps.gif' }
