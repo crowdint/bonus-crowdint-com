@@ -1,0 +1,29 @@
+%ul.nav.nav-tabs
+  %li.list.active
+    %a{ data: { toggle: 'tab', target: '#list' },  href: "#" } List
+  %li.bars
+    %a{ data: { toggle: 'tab', target: '#bars' },  href: "#" } Bars
+  %li.pie
+    %a{ data: { toggle: 'tab', target: '#pie' },  href: "#" } Pie
+
+.tab-content
+  %article#list.tab-pane.active
+    .panel.panel-default
+      .panel-body
+        %table.table
+          %thead
+            %tr
+              %th Name
+              %th Amount
+          %tbody
+
+  %article#bars.tab-pane
+    .panel.panel-default
+      .panel-body
+        %canvas{ id: 'barsChart' }
+
+
+  %article#pie.tab-pane
+    .panel.panel-default
+      .panel-body
+        %canvas{ id: 'pieChart' }

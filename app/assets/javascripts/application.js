@@ -18,4 +18,5 @@
 //= require backbone
 //= require hamlcoffee
 //= require mixin_includer
+//= require Chart
 //= require bonus_batch

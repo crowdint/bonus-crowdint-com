@@ -17,6 +17,7 @@ window.BonusBatch =
     Batches:
       Users: {}
       Bonuses: {}
+      Reports: {}
     Members: {}
   CurrentUserData: null
 
