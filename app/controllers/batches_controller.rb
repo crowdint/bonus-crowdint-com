@@ -24,12 +24,10 @@ class BatchesController < ApplicationController
 
   # PATCH/PUT /batches/1.json
   def update
-    if @organization.is_owner?(current_user)
-      if valid_data(batch_params) && @batch.update(batch_params)
-        render json: @batch, status: :ok
-      else
-        render json: @batch.errors, status: :unprocessable_entity
-      end
+    if valid_data(batch_params) && @batch.update(batch_params)
+      render json: @batch, status: :ok
+    else
+      render json: @batch.errors, status: :unprocessable_entity
     end
   end
 
