@@ -25,4 +25,7 @@ class BonusBatch.Views.Base extends Backbone.View
       @model.save({}
         success: (model, response) =>
           @handleSuccess(response)
+        error: (response) =>
+          @handleError(response)
       )
+

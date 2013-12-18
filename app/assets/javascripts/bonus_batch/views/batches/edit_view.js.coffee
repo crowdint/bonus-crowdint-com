@@ -27,6 +27,10 @@ class BonusBatch.Views.Batches.EditView extends BonusBatch.Views.Base
   handleSuccess: ->
     console.log 'success'
 
+  handleError: ->
+    @removeLoader()
+    console.log 'error'
+
   helpers:
     remainingBalance: ->
       @user_balance - @current_balance

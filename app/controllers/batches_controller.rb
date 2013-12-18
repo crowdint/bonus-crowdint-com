@@ -24,7 +24,7 @@ class BatchesController < ApplicationController
 
   # PATCH/PUT /batches/1.json
   def update
-    if @batch.update(batch_params)
+    if valid_data(batch_params) && @batch.update(batch_params)
       render json: @batch, status: :ok
     else
       render json: @batch.errors, status: :unprocessable_entity
@@ -50,5 +50,13 @@ class BatchesController < ApplicationController
 
   def set_organization
     @organization = Organization.find(params[:organization_id])
+  end
+
+  #TODO  ESTO ESTA HORRIBLE ME DOY VERGUENZA A MI MISMO, APESTO
+  def valid_data batch_params
+    sum = 0
+    max_balance = batch_params['user_batches_attributes'].values[0]['balance'].to_i
+    batch_params['bonuses_attributes'].each {|k, v| sum += v['amount'].to_i}
+    sum <= max_balance
   end
 end
