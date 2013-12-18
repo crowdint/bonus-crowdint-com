@@ -2,7 +2,7 @@ class Batches::BonusesController < ApplicationController
   before_action :set_batch, only: :index
 
   def index
-    service = ReceivedBonusesService.new @batch
+    service = ReceivedBonusesService.new @batch, current_user
     render json: service.bonuses, each_serializer: UserBonusSerializer, status: :ok
   end
 
