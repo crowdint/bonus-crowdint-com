@@ -11,7 +11,7 @@ class ReceivedBonusesService
     @users.collect do |user|
       UserBonusPresenter.new(
         user: user,
-        bonus: received_bonus(user),
+        bonuses: received_bonus(user),
         batch: @batch)
     end
   end
@@ -19,6 +19,6 @@ class ReceivedBonusesService
   def received_bonus user
     bonuses = user.received_bonuses.by_batch(@batch.id)
     bonuses = bonuses.where(user_id: @current_user.id) if @current_user
-    bonuses.first
+    bonuses
   end
 end

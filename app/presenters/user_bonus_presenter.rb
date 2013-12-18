@@ -1,14 +1,15 @@
 class UserBonusPresenter
   include ActiveModel::Serialization
 
+  #TODO refactor and split to different presenters or services
   def initialize args
-    @bonus = args[:bonus]
+    @bonuses = args[:bonuses]
     @user = args[:user]
     @batch = args[:batch]
   end
 
   def amount
-    @bonus && @bonus.amount
+    @bonuses && @bonuses.sum(:amount)
   end
 
   def name
@@ -16,11 +17,11 @@ class UserBonusPresenter
   end
 
   def message
-    @bonus && @bonus.message
+    @bonuses.first && @bonuses.first.message
   end
 
   def id
-    @bonus && @bonus.id
+    @bonuses.first && @bonuses.first.id
   end
 
   def receiver_id
