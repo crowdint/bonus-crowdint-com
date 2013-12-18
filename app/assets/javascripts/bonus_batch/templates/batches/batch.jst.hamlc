@@ -5,7 +5,8 @@
 %td
   %a{ href: "/my-organizations/#{@organization.id}/batches/#{@id}/report" } View
 %td
-  %button.remove
-    Remove
-  %button.lock
-    Lock
+  - if @isAdmin()
+    %button.remove
+      Remove
+    %button.lock
+      Lock
