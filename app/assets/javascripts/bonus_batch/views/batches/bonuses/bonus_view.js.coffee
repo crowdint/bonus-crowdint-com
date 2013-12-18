@@ -8,7 +8,7 @@ class BonusBatch.Views.Batches.Bonuses.BonusView extends BonusBatch.Views.Base
 
   events:
     'click .send-message'   : 'showMessageModal'
-    'keyup .amount'         : 'updateAmount'
+    'focusout .amount'         : 'updateAmount'
 
   showMessageModal: ->
     sendMessageView = new BonusBatch.Views.Batches.Bonuses.SendMessageView
@@ -19,6 +19,7 @@ class BonusBatch.Views.Batches.Bonuses.BonusView extends BonusBatch.Views.Base
   updateAmount: (event) ->
     amount = $(event.target).val()
     @model.set 'amount', amount
+    $(event.target).attr 'value', amount
 
   updateMessageInput: (model) ->
     @$('.message').val model.get 'message'

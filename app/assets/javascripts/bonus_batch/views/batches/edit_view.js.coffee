@@ -23,6 +23,7 @@ class BonusBatch.Views.Batches.EditView extends BonusBatch.Views.Base
   toggleSubmit: (collection) ->
     enabled = @bonusesCollection.remaining() >= 0
     $('input[type="submit"]').attr 'disabled', !enabled
+    $('#current_balance').html @bonusesCollection.remaining()
 
   handleSuccess: ->
     console.log 'success'

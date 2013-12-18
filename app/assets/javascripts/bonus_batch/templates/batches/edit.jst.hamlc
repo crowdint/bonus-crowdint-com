@@ -20,7 +20,7 @@
 
     %p
       Current Balance:
-      %strong = @remainingBalance()
+      %strong#current_balance = @remainingBalance()
 
     %legend
       Members:
