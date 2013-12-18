@@ -57,6 +57,6 @@ class BatchesController < ApplicationController
     sum = 0
     max_balance = batch_params['user_batches_attributes'].values[0]['balance'].to_i
     batch_params['bonuses_attributes'].each {|k, v| sum += v['amount'].to_i}
-    sum <= max_balance
+    sum <= max_balance and batch_params['bonuses_attributes'].size >= @organization.min_assignments
   end
 end
