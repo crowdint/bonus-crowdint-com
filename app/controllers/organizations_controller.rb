@@ -33,7 +33,7 @@ class OrganizationsController < ApplicationController
 
   # DELETE /organizations/1.json
   def destroy
-    @organization.destroy
+    @organization.destroy if @organization.is_owner?(current_user)
     head :no_content
   end
 
