@@ -1,4 +1,7 @@
 class BonusBatch.Views.Batches.Bonuses.BonusView extends BonusBatch.Views.Base
+  initialize: ->
+    @model.on 'change:message', @updateMessageInput, @
+
   templatePath: 'batches/bonuses/bonus'
 
   tagName: 'tr'
@@ -16,6 +19,9 @@ class BonusBatch.Views.Batches.Bonuses.BonusView extends BonusBatch.Views.Base
   updateAmount: (event) ->
     amount = $(event.target).val()
     @model.set 'amount', amount
+
+  updateMessageInput: (model) ->
+    @$('.message').val model.get 'message'
 
   helpers:
     batchUserId: ->
