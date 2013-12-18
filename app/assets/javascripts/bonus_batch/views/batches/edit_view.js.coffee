@@ -16,7 +16,7 @@ class BonusBatch.Views.Batches.EditView extends BonusBatch.Views.Base
     bonusBatchesIndexView = new BonusBatch.Views.Batches.Bonuses.IndexView
       collection: @bonusesCollection
       el: @$('.batch-members')
-    @bonusesCollection.fetch reset:true
+    @bonusesCollection.fetch reset:true, data: { for_current_user: true }
     #TODO refactor thhis binding
     @bonusesCollection.on 'change reset', @toggleSubmit, @
 

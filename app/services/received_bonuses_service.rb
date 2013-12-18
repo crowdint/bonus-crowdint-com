@@ -1,10 +1,10 @@
 class ReceivedBonusesService
   attr_accessor :batch
 
-  def initialize batch, current_user
-    @batch = batch
-    @users = batch.users
-    @current_user = current_user
+  def initialize args
+    @batch = args[:batch]
+    @users = @batch.users
+    @current_user = args[:user]
   end
 
   def bonuses
@@ -17,6 +17,8 @@ class ReceivedBonusesService
   end
 
   def received_bonus user
-    user.received_bonuses.by_batch(@batch.id).where(user_id: @current_user.id).first
+    bonuses = user.received_bonuses.by_batch(@batch.id)
+    bonuses = bonuses.where(user_id: @current_user.id) if @current_user
+    bonuses.first
   end
 end
