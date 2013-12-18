@@ -24,16 +24,18 @@ class BatchesController < ApplicationController
 
   # PATCH/PUT /batches/1.json
   def update
-    if valid_data(batch_params) && @batch.update(batch_params)
-      render json: @batch, status: :ok
-    else
-      render json: @batch.errors, status: :unprocessable_entity
+    if @organization.is_owner?(current_user)
+      if valid_data(batch_params) && @batch.update(batch_params)
+        render json: @batch, status: :ok
+      else
+        render json: @batch.errors, status: :unprocessable_entity
+      end
     end
   end
 
   # DELETE /batches/1.json
   def destroy
-    @batch.destroy
+    @batch.destroy if @organization.is_owner?(current_user)
     head :no_content
   end
 
