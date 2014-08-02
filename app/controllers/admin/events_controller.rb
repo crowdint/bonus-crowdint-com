@@ -10,7 +10,9 @@ class Admin::EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event)
+    @event         = Event.new(event)
+    @event.creator = current_user
+
     if @event.save
       redirect_to admin_events_path, notice: "Event created succesfully"
     else
