@@ -1,6 +1,8 @@
 class Admin::EventsController < ApplicationController
+  before_filter :load_event, only: [:edit, :update, :destroy]
+
   def index
-  	@events = Event.all
+    @events = Event.all
   end
 
   def new
@@ -16,8 +18,23 @@ class Admin::EventsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @event.update_attributes(event)
+      redirect_to admin_events_path, notice: "Event updated succesfully"
+    else
+      render action: :edit
+    end
+  end
+
   private
   def event
     params.require(:event).permit(:name)
+  end
+
+  def load_event
+    @event = Event.find(params[:id])
   end
 end
