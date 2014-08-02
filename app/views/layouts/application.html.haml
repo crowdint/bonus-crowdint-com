@@ -6,4 +6,9 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    = yield
+    %nav.navbar.navbar-default{ role: "navigation" }
+      .container-fluid
+        .navbar-header
+          = link_to 'Bonus.Crowdint.Com', admin_root_path, class: 'navbar-brand'
+
+    .container= yield
