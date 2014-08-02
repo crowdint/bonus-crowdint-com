@@ -29,6 +29,11 @@ class Admin::EventsController < ApplicationController
     end
   end
 
+  def destroy
+    @event.destroy
+    redirect_to admin_events_path
+  end
+
   private
   def event
     params.require(:event).permit(:name)

@@ -18,3 +18,9 @@ Feature: Admin can CRUD events
     And I press "Update"
     Then I should be on the "admin events" page
     And I should see "Another name for the event"
+
+  Scenario: Delete Event
+    Given an event with name "Some bonus event" exists
+    And I go to the "admin events" page
+    And I click on "Delete"
+    Then I should not see "Some bonus event"
