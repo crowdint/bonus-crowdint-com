@@ -36,7 +36,7 @@ class Admin::EventsController < ApplicationController
 
   private
   def event
-    params.require(:event).permit(:name)
+    params.require(:event).permit(:name, :opens_at)
   end
 
   def load_event
