@@ -1,4 +1,4 @@
-class Admin::EventsController < ApplicationController
+class Admin::EventsController < Admin::BaseController
   before_filter :load_event, only: [:edit, :update, :destroy]
 
   def index
