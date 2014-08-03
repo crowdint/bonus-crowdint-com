@@ -1,16 +1,9 @@
 Given(/^I am logged in as an admin$/) do
-  user                       = User.new
-  user.email                 = 'test@example.com'
-  user.password              = 'test1234'
-  user.password_confirmation = 'test1234'
-  user.is_admin              = true
-
-  user.save!
-
+  user = create(:admin_user)
   visit admin_root_path
 
-  fill_in 'Email'    , with: 'test@example.com'
-  fill_in 'Password' , with: 'test1234'
+  fill_in 'Email'    , with: user.email
+  fill_in 'Password' , with: user.password
 
   click_button 'Sign in'
 end

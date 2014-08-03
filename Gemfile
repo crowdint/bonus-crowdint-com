@@ -36,5 +36,6 @@ gem 'persistent_settings', '~> 1.5.0'
 group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
+  gem 'factory_girl'
   gem 'selenium-webdriver'
 end
