@@ -10,5 +10,11 @@ class AwardValidator < ActiveModel::Validator
         record.errors[:points] << "The award excedes your available points"
       end
     end
+
+    if record.points
+      if record.points < (Setting.try(:minimum_allocation) || 10)
+        record.errors[:points] << "You must assign at least 10 points"
+      end
+    end
   end
 end
