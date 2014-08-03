@@ -4,6 +4,8 @@ FactoryGirl.define do
       "test#{n}@example.com"
     end
 
+    name { Faker::Name.name }
+
     password              "test1234"
     password_confirmation "test1234"
 
