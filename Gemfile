@@ -32,6 +32,7 @@ gem 'devise'
 gem 'haml-rails'
 gem 'persistent_settings', '~> 1.5.0'
 
+gem 'pg'
 
 group :test do
   gem 'cucumber-rails', require: false
