@@ -11,4 +11,9 @@
         .navbar-header
           = link_to 'Bonus.Crowdint.Com', admin_root_path, class: 'navbar-brand'
 
-    .container= yield
+    .container
+      - if flash[:notice]
+        .alert.alert-success= flash[:notice]
+      - if flash[:alert]
+        .alert.alert-warning= flash[:alert]
+      = yield

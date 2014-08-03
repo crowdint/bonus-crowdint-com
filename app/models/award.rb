@@ -6,5 +6,6 @@ class Award < ActiveRecord::Base
   delegate :name, to: :receiver, prefix: true
 
   validates :user, presence: true
+  validates :points, numericality: true
   validates_with AwardValidator
 end
