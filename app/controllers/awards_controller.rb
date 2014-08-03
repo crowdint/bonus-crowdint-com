@@ -36,6 +36,12 @@ class AwardsController < ApplicationController
     end
   end
 
+  def destroy
+    @award = current_user.awards.find(params[:id])
+    @award.destroy
+    redirect_to event_awards_path(@event)
+  end
+
   private
   def award
     params.require(:award).permit(:receiver_id, :points)

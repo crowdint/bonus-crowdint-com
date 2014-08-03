@@ -22,3 +22,9 @@ Feature: User can award points
     When I press "Update"
     Then I should see "Buzzbee Spider 50"
 
+  Scenario: Destroy Award
+    Given an award for "50" has been given to "Buzzbee Spider"
+    And I am on the "events" page
+    And I click on "Points for July 2014"
+    When I click on "Delete"
+    Then I should not see "Buzzbee Spider 50"
