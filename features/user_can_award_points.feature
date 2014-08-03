@@ -28,3 +28,14 @@ Feature: User can award points
     And I click on "Points for July 2014"
     When I click on "Delete"
     Then I should not see "Buzzbee Spider 50"
+
+  Scenario: User can't award more points than available
+    Given an award for "90" has been given to "Buzzbee Spider"
+    And a user with name "Ruby Bee"
+    And I am on the "events" page
+    And I click on "Points for July 2014"
+    And I click on "Award"
+    And I select "Ruby Bee" from "Receiver"
+    And I fill in "Points" with "100"
+    When I press "Create"
+    Then I should see "The award excedes your available points"
