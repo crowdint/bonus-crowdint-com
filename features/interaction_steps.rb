@@ -14,3 +14,7 @@ Then(/^I should( not)? see "(.*?)"$/) do |should, expected_text|
   assertion = (should != " not")
   assert_equal assertion, page.has_content?(expected_text)
 end
+
+Given(/^I select "(.*?)" from "(.*?)"$/) do |value, field|
+  select value, from: field
+end
