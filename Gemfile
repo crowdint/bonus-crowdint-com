@@ -30,6 +30,7 @@ gem 'bootstrap-form'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'haml-rails'
+gem 'persistent_settings', '~> 1.5.0'
 
 
 group :test do
