@@ -4,4 +4,7 @@ class Award < ActiveRecord::Base
   belongs_to :event
 
   delegate :name, to: :receiver, prefix: true
+
+  validates :user, presence: true
+  validates_with AwardValidator
 end
