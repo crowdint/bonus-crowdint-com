@@ -20,6 +20,20 @@ class AwardsController < ApplicationController
     end
   end
 
+  def edit
+    @award = current_user.awards.find(params[:id])
+    @users = User.where.not(id: current_user.id).order(:name)
+  end
+
+  def update
+    @award = current_user.awards.find(params[:id])
+    if @award.update_attributes(award)
+      redirect_to event_awards_path(@event)
+    else
+      render action: :edit
+    end
+  end
+
   private
   def award
     params.require(:award).permit(:receiver_id, :points)

@@ -14,3 +14,11 @@ Feature: User can award points
     Then I should see "Buzzbee Spider 100"
 
   Scenario: Edit Award
+    Given an award for "50" has been given to "Buzzbee Spider"
+    And I am on the "events" page
+    And I click on "Points for July 2014"
+    And I click on "Edit"
+    And I fill in "Points" with "50"
+    When I press "Update"
+    Then I should see "Buzzbee Spider 50"
+
