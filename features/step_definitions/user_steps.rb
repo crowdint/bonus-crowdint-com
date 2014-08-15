@@ -1,3 +1,3 @@
 Given(/^a user with name "(.*?)"$/) do |name|
-  create(:user, name: name)
+  Fabricate(:user, name: name)
 end
