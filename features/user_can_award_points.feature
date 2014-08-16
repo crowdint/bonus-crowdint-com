@@ -2,7 +2,9 @@ Feature: User can award points
   Background:
     Given a user exists with name: "Buzzbee Spider"
     And I am logged in as a user
+    And I am part of a team with name: "Avengers"
     And an event exists with name: "Points for July 2014"
+    And the event is assigned to team "Avengers"
 
   Scenario: Award points
     Given I am on the "root" page
