@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     root to: 'events#index'
     resources :events
     resources :teams do
-      resources :members
+      resources :memberships
     end
   end
 end

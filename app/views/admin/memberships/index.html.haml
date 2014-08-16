@@ -1,0 +1,6 @@
+%h1 Team Members
+
+= link_to 'New Member', new_admin_team_membership_path(@team)
+
+%table.table.striped
+  %tbody= render @memberships
