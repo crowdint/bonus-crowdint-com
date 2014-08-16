@@ -7,6 +7,7 @@ class Admin::EventsController < Admin::BaseController
 
   def new
     @event = Event.new
+    @teams = Team.all
   end
 
   def create
@@ -16,17 +17,20 @@ class Admin::EventsController < Admin::BaseController
     if @event.save
       redirect_to admin_events_path, notice: "Event created succesfully"
     else
+      @teams = Team.all
       render action: :new
     end
   end
 
   def edit
+    @teams = Team.all
   end
 
   def update
     if @event.update_attributes(event)
       redirect_to admin_events_path, notice: "Event updated succesfully"
     else
+      @teams = Team.all
       render action: :edit
     end
   end
@@ -38,7 +42,7 @@ class Admin::EventsController < Admin::BaseController
 
   private
   def event
-    params.require(:event).permit(:name, :opens_at)
+    params.require(:event).permit(:name, :opens_at, :team_id)
   end
 
   def load_event

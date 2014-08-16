@@ -1,4 +1,5 @@
 = f.bootstrap_text_field :name
+= f.bootstrap_collection_select :team_id, @teams, :id, :name
 .form-group
   = f.label :opens_at
   = f.datetime_select :opens_at
