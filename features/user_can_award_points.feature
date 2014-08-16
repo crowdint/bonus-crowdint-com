@@ -1,6 +1,6 @@
 Feature: User can award points
   Background:
-    Given a user with name "Buzzbee Spider"
+    Given a user exists with name: "Buzzbee Spider"
     And I am logged in as a user
     And an event exists with name: "Points for July 2014"
 
@@ -31,7 +31,7 @@ Feature: User can award points
 
   Scenario: User can't award more points than available
     Given an award for "90" has been given to "Buzzbee Spider"
-    And a user with name "Ruby Bee"
+    And a user exists with name: "Ruby Bee"
     And I am on the "events" page
     And I click on "Points for July 2014"
     And I click on "Award"
