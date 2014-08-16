@@ -1,2 +1,4 @@
 %tr
   %td= team.name
+  %td= link_to 'Edit', edit_admin_team_path(team)
+  %td= link_to 'Delete', admin_team_path(team), method: :delete
