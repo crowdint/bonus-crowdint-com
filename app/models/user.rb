@@ -5,4 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :awards
+  has_many :memberships
+  has_many :teams, through: :memberships
+  has_many :events, through: :teams
 end

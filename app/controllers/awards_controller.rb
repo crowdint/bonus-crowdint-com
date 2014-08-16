@@ -48,6 +48,6 @@ class AwardsController < ApplicationController
   end
 
   def load_event
-    @event = Event.find(params[:event_id])
+    @event = current_user.events.find(params[:event_id])
   end
 end

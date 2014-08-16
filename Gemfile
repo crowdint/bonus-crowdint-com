@@ -40,4 +40,5 @@ group :test do
   gem 'fabrication'
   gem 'ffaker'
   gem 'selenium-webdriver'
+  gem 'pry-rails'
 end
