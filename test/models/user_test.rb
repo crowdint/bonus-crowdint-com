@@ -21,16 +21,16 @@ class UserTest < ActiveSupport::TestCase
 
   test "find_for_google_oauth2 when user does not exist" do
     oauth = {
-      "info" => { "name" => "Peg", "email" => "peg@cat.com" }
+      "info" => { "name" => "Peg", "email" => "peg@crowdint.com" }
     }
 
     User.find_for_google_oauth2(oauth)
 
-    assert_equal 1, User.where(email: "peg@cat.com", name: "Peg").count
+    assert_equal 1, User.where(email: "peg@crowdint.com", name: "Peg").count
   end
 
   test "find_for_google_oauth2 when user exists" do
-    user = Fabricate(:user)
+    user = Fabricate(:user, email: "peg@crowdint.com")
 
     oauth = {
       "info" => { "name" => user.name, "email" => user.email }
@@ -39,5 +39,10 @@ class UserTest < ActiveSupport::TestCase
     found_user = User.find_for_google_oauth2(oauth)
 
     assert_equal true, user == found_user
+  end
+
+  test "valid_email?" do
+    assert_equal true, User.valid_email?("someone@crowdint.com")
+    assert_equal false, User.valid_email?("someone@google.com")
   end
 end
