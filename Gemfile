@@ -33,6 +33,7 @@ gem 'figaro'
 gem 'haml-rails'
 gem 'omniauth-google-oauth2'
 gem 'persistent_settings', '~> 1.5.0'
+gem 'puma'
 
 gem 'pg'
 
