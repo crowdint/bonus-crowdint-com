@@ -29,12 +29,14 @@ gem 'spring',        group: :development
 gem 'bootstrap-form'
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'figaro'
 gem 'haml-rails'
+gem 'omniauth-google-oauth2'
 gem 'persistent_settings', '~> 1.5.0'
 
 gem 'pg'
 
-group :test do
+group :development, :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'fabrication'

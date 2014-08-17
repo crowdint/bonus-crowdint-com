@@ -18,4 +18,26 @@ class UserTest < ActiveSupport::TestCase
     assert_equal true, @user.events.include?(events[1])
 
   end
+
+  test "find_for_google_oauth2 when user does not exist" do
+    oauth = {
+      "info" => { "name" => "Peg", "email" => "peg@cat.com" }
+    }
+
+    User.find_for_google_oauth2(oauth)
+
+    assert_equal 1, User.where(email: "peg@cat.com", name: "Peg").count
+  end
+
+  test "find_for_google_oauth2 when user exists" do
+    user = Fabricate(:user)
+
+    oauth = {
+      "info" => { "name" => user.name, "email" => user.email }
+    }
+
+    found_user = User.find_for_google_oauth2(oauth)
+
+    assert_equal true, user == found_user
+  end
 end

@@ -10,6 +10,11 @@
       .container-fluid
         .navbar-header
           = link_to 'Bonus.Crowdint.Com', admin_root_path, class: 'navbar-brand'
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            - if current_user
+              %li= link_to 'Logout', destroy_user_session_path
+
 
     .container
       - if flash[:notice]
