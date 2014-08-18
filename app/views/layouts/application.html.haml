@@ -6,14 +6,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %nav.navbar.navbar-default{ role: "navigation" }
-      .container-fluid
-        .navbar-header
-          = link_to 'Bonus.Crowdint.Com', admin_root_path, class: 'navbar-brand'
-        .collapse.navbar-collapse
-          %ul.nav.navbar-nav
-            - if current_user
-              %li= link_to 'Logout', destroy_user_session_path
+    = render 'navbar'
 
 
     .container
