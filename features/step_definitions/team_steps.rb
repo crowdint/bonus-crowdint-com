@@ -3,7 +3,7 @@ Given(/^a team exists with name: "(.*?)"$/) do |name|
 end
 
 Given(/^I am part of a team with name: "(.*?)"$/) do |team_name|
-  step %{a team exists with name: "#{team_name}"}
+  @team = Team.where(name: team_name).first || Fabricate(:team)
   @team.users << @user
 end
 

@@ -44,7 +44,7 @@ class AwardsController < ApplicationController
 
   private
   def award
-    params.require(:award).permit(:receiver_id, :points)
+    params.require(:award).permit(:receiver_id, :points, :comment)
   end
 
   def load_event

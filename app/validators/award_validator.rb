@@ -5,8 +5,7 @@ class AwardValidator < ActiveModel::Validator
     end
 
     if record.points
-      awarded_points = (record.user.awards.sum(:points) || 0)
-      if (awarded_points + record.points) > (Setting.try(:points_per_participant) || 100)
+      if (awarded_points(record) + record.points) > (Setting.try(:points_per_participant) || 100)
         record.errors[:points] << "The award excedes your available points"
       end
     end
@@ -15,6 +14,16 @@ class AwardValidator < ActiveModel::Validator
       if record.points < (Setting.try(:minimum_allocation) || 10)
         record.errors[:points] << "You must assign at least 10 points"
       end
+    end
+  end
+
+  def awarded_points(record)
+    event = record.event
+    user = record.user
+    if record.persisted?
+      awarded_points = (user.awards.where(event: event).where.not(id: record.id).sum(:points) || 0)
+    else
+      awarded_points = (user.awards.where(event: event).sum(:points) || 0)
     end
   end
 end
