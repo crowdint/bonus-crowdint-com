@@ -1,6 +1,9 @@
-%h1 Awards
+.page-header
+  %h1
+    = @event.name
+    %small Award
 
-= link_to 'Award', new_event_award_path
+  = link_to 'Award', new_event_award_path, class: "btn btn-primary"
 
-%table
+%table.table.table-striped
   %tbody= render @awards

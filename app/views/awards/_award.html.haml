@@ -2,4 +2,4 @@
   %td= award.receiver_name
   %td= award.points
   %td= link_to 'Edit', edit_event_award_path(@event, award)
-  %td= link_to 'Delete', event_award_path(@event, award), method: :delete
+  %td= link_to 'Delete', event_award_path(@event, award), method: :delete, data: { confirm: "Are you sure?" }

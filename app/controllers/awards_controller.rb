@@ -7,7 +7,7 @@ class AwardsController < ApplicationController
 
   def new
     @award = Award.new
-    @users = User.where.not(id: current_user.id).order(:name)
+    load_users
   end
 
   def create
@@ -16,7 +16,7 @@ class AwardsController < ApplicationController
     if @award.save
       redirect_to event_awards_path(@event)
     else
-      @users = User.where.not(id: current_user.id).order(:name)
+      load_users
       render action: :new
     end
   end
@@ -31,7 +31,7 @@ class AwardsController < ApplicationController
     if @award.update_attributes(award)
       redirect_to event_awards_path(@event)
     else
-      @users = User.where.not(id: current_user.id).order(:name)
+      load_users
       render action: :edit
     end
   end
@@ -49,5 +49,10 @@ class AwardsController < ApplicationController
 
   def load_event
     @event = current_user.events.find(params[:event_id])
+  end
+
+  def load_users
+    @team = @event.team
+    @users = @team.users.where.not(id: current_user.id).order(:name)
   end
 end

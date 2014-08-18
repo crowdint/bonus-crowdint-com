@@ -1,3 +1,5 @@
 = f.bootstrap_collection_select :receiver_id, @users, :id, :name
 = f.bootstrap_text_field :points
-= f.submit
+= f.bootstrap_text_area :comment
+= f.submit class: "btn btn-primary"
+= link_to "Cancel", event_awards_path(@event), class: "btn"
