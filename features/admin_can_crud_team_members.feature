@@ -12,4 +12,4 @@ Feature: Admin can CRUD team members
     And I press "Create"
     Then I should see "Human Torch"
     When I click on "Delete"
-    Then I should not see "Human Torch"
+    Then I should not see "Human Torch" within the member list

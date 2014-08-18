@@ -39,6 +39,7 @@ gem 'pg'
 
 group :development, :test do
   gem 'cucumber-rails', require: false
+  gem 'cucumber-debug'
   gem 'database_cleaner'
   gem 'fabrication'
   gem 'ffaker'
