@@ -1,6 +1,7 @@
-%h1 Events
+.page-header
+  %h1 Events
 
-= link_to 'Create Event', new_admin_event_path
+  = link_to 'Create Event', new_admin_event_path, class: "btn btn-primary"
 
-%table
+%table.table.table-striped
   %tbody= render @events

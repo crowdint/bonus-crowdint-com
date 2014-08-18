@@ -1,6 +1,7 @@
-%h1 Teams
+.page-header
+  %h1 Teams
 
-= link_to 'Create Team', new_admin_team_path
+  = link_to 'Create Team', new_admin_team_path, class: "btn btn-primary"
 
-%table
+%table.table.table-striped
   %tbody= render @teams

@@ -8,7 +8,7 @@ class Admin::MembershipsController < Admin::BaseController
 
   def new
     @membership = Membership.new
-    @users  = User.all
+    load_users
   end
 
   def create
@@ -16,13 +16,15 @@ class Admin::MembershipsController < Admin::BaseController
     if @membership.save
       redirect_to admin_team_memberships_path(@team), notice: 'The team member was created succesfully'
     else
+      load_users
       render action: :new
     end
   end
 
   def destroy
+    name = @membership.name
     @membership.destroy
-    redirect_to admin_team_memberships_path(@team), notice: 'The team member was destroyed succesfully'
+    redirect_to admin_team_memberships_path(@team), notice: "#{name} was removed from the team succesfully"
   end
 
   private
@@ -36,5 +38,9 @@ class Admin::MembershipsController < Admin::BaseController
 
   def load_membership
     @membership = @team.memberships.find(params[:id])
+  end
+
+  def load_users
+    @users  = User.order(:name) - @team.users
   end
 end

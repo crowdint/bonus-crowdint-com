@@ -2,4 +2,4 @@
   %td= team.name
   %td= link_to 'Members', admin_team_memberships_path(team)
   %td= link_to 'Edit', edit_admin_team_path(team)
-  %td= link_to 'Delete', admin_team_path(team), method: :delete
+  %td= link_to 'Delete', admin_team_path(team), method: :delete, data: { confirm: "Are you sure?" }

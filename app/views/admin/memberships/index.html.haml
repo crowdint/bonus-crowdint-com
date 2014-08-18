@@ -1,6 +1,9 @@
-%h1 Team Members
+.page-header
+  %h1
+    = @team.name
+    %small Team Members
 
-= link_to 'New Member', new_admin_team_membership_path(@team)
+  = link_to 'New Member', new_admin_team_membership_path(@team), class: "btn btn-primary"
 
 %table.table.striped
   %tbody= render @memberships
